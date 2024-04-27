@@ -21,8 +21,8 @@ app.use(express.json());
 app.use('/images', express.static('upload/images'));
 app.use('/pdfs', express.static('upload/pdfs'));
 
-app.use('/', require('./routes/login'))
 app.use('/', require('./routes/register'))
+app.use('/', require('./routes/login'))
 app.use('/', require('./routes/uploads'))
 
 mongoose.connection.once('open', () => {

@@ -9,9 +9,9 @@ import axios from 'axios';
 // import './Register.css';
 
 const Register = () => {
-    const [userfarmer, setUserFarmer] = useState('farmer')
-    const [Name, setName] = useState()
-        const [username, setUsername] = useState('');
+    const [selectedOption, setSelectedOption] = useState('');
+    const [Name, setName] = useState('')
+    const [username, setUsername] = useState('');
     const [Phone, setPhone] = useState('');
     const [Street, setStreet] = useState('')
     const [City, setCity] = useState('')
@@ -35,7 +35,10 @@ const Register = () => {
         }
         return true;
     };
-
+    const handleChange = (e) => {
+        setSelectedOption(e.target.value);
+      };
+    
     const handleSubmit = async (e) => 
     {
         e.preventDefault();
@@ -43,31 +46,31 @@ const Register = () => {
         if (!username || !Phone || !pass)
             return;
         
-        if (!isPassMatch(pass, retypePass))
-        {
+        if (!isPassMatch(pass, retypePass)) {
             notifyWarning('Password and confirm password should be same')
             return;
         }
 
-        const user = 
-        {
-            name : Name,
-            phoneNumber: Phone,
-            username : username,
-            // farmer : farmername,
-            password: pass,
-            // address : {
-            //     street : Street,
-            //     city : City
-            // }
-        };
-
         try 
         {
             setLoading(true);
-            const response = await axios.post('http://localhost:3500/farmer/register', user);
-                notifySuccess(`${user.username} has been registered as ${userfarmer}`)
-                console.log(response + '\nregistered');
+            console.log(`http://localhost:3500/${selectedOption}/register`);
+            const response = await axios.post(`http://localhost:3500/${selectedOption}/register`, {
+                name : String(Name),
+                phoneNumber: String(Phone),
+                username: String(username),
+                farmername: String(username), 
+                password : String(pass),
+                address : {
+                    street : String(Street),
+                    city : String(City),
+                    state : String(State),
+                    postalCode : String(PinCode),
+                    country : String(Country) || "India"
+                }
+            });
+                notifySuccess(`${response.data.username} has been registered as ${selectedOption}`)
+                console.log(response.data);
                 setName('')
                 setUsername('');
                 setPhone('');
@@ -79,10 +82,11 @@ const Register = () => {
                 setPass('');
                 setRetypePass('');
                 setLoading(false);
+                navigate('/login')
         } 
         catch (error) 
         {
-            console.error('Cannot send data:', error);
+            console.error('Cannot send data:', error.message);
             notifyError("Couldn't register user");
             setLoading(false);
         }
@@ -91,7 +95,15 @@ const Register = () => {
     return (
         <div className='full'>
             <form className='page'>
-                
+
+                <label htmlFor="user-type">Select user type:</label>
+                    <select id="user-type" value={selectedOption} onChange={handleChange}>
+                        <option value="">Select...</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="user">User</option>
+                    </select>
+                    {selectedOption && <p>Selected option: {selectedOption}</p>}
+
                     <input  
                         placeholder='Name:'
                         required
@@ -125,7 +137,7 @@ const Register = () => {
                         title='Enter your Phone number'
                     />
 
-                    <input  
+                    {/* <input  
                         placeholder='Street: '
                         required
                         type='Street'
@@ -134,7 +146,7 @@ const Register = () => {
                         onChange={(e) => setStreet(e.target.value)}
                         className='input1'
                         title='Enter your Street'
-                    />
+                    /> */}
 
                 <div className='address-input'>
                     <input  

@@ -24,7 +24,7 @@ exports.registerUser = async (req, res) => {
             address: newAddress ? newAddress._id : null,
         });
 
-        res.status(201).json({message : `${newUser.username} created, farmer : ${isFarmer}`});
+        res.status(201).json({message : `${newUser.username} created`});
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Server error' });
@@ -35,7 +35,7 @@ exports.registerFarmer = async (req, res) => {
     try {
         const { name, phoneNumber, password, farmername, aadharNumber, address } = req.body;
 
-        const existingFarmer = await Farmer.findOne({ $or: [{ farmername }, { aadharNumber }, {phoneNumber}] });
+        const existingFarmer = await Farmer.findOne({ farmername });
         if (existingFarmer) {
             return res.status(400).json({ message: 'farmername or Aadhar number already exists' });
         }
@@ -54,6 +54,7 @@ exports.registerFarmer = async (req, res) => {
             address: newAddress ? newAddress._id : null 
         });
 
+        console.log(`${newFarmer.farmername} registered`);
         res.status(201).json(newFarmer);
     } catch (error) {
         console.error(error);
