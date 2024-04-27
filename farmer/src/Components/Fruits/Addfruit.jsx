@@ -19,8 +19,9 @@ function ProductForm() {
         event.preventDefault();
         // Handle form submission logic here
         const response = await axios.post('http://localhost/3500/farmer/addproduct', {
+            farmername : user.username || user.farmername,
             productName: productName,
-            category: category,
+            category: 'fruit',
             dateOfHarvest: dateOfHarvest,
             price: price,
             offer: offer,

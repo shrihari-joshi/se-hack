@@ -14,7 +14,7 @@ const LoginPage = () => {
         if (loginType === 'farmer') {
             // Perform farmer login logic here
             // For demonstration, just redirect to a specific route
-            history('/farmardashboard');
+            history('/sell');
         } else {
             // Perform consumer login logic here
             // Redirect to consumer dashboard or perform other actions

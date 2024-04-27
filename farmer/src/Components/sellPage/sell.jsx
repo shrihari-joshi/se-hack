@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 import { CgProfile } from "react-icons/cg";
 import './sell.css';
 
@@ -45,7 +46,8 @@ const Sell = () => {
                                             aria-haspopup="true"
                                             onClick={handleMenuClick}
                                         >
-                                            Home
+                                            <Link to={'/home'}>Home</Link>
+
                                         </Button>
                                     </li>
                                     <li>
@@ -66,10 +68,18 @@ const Sell = () => {
                                                 'aria-labelledby': 'products-button',
                                             }}
                                         >
-                                            <MenuItem onClick={handleClose}>Fruits</MenuItem>
-                                            <MenuItem onClick={handleClose}>Vegetables</MenuItem>
-                                            <MenuItem onClick={handleClose}>Meat</MenuItem>
-                                            <MenuItem onClick={handleClose}>Other stuff</MenuItem>
+                                            <MenuItem onClick={handleClose}>
+                                                <Link to={'/addfruit'}>Fruits</Link>
+                                            </MenuItem>
+                                            <MenuItem onClick={handleClose}>
+                                                <Link to={'/addvegetable'}>Vegetables</Link>
+                                            </MenuItem>
+                                            <MenuItem onClick={handleClose}>
+                                                <Link to={'/adddairy'}>Dairy</Link>
+                                            </MenuItem>
+                                            <MenuItem onClick={handleClose}>
+                                                <Link to={'/addpoultry'}>Poultry</Link>
+                                            </MenuItem>
                                         </Menu>
                                     </li>
                                     <li>
