@@ -15,7 +15,7 @@ const MilkProductItems = ({ milkProduct, addToCart }) => {
             {milkProduct.offers !== 0 && (
                 <p className="milkProduct-offers"><strong>Offers</strong> {milkProduct.offers}</p>
             )}
-            <p className="milkProduct-image"><strong>""Idhar Image dalna hai SHREYAA""</strong> {milkProduct.imageUrl}</p>
+            {/* <p className="milkProduct-image"><strong>""Idhar Image dalna hai SHREYAA""</strong> {milkProduct.imageUrl}</p> */}
 
             <input
                 type="number"

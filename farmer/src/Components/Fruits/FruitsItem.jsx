@@ -12,7 +12,7 @@ const FruitsItem = ({ fruit, addToCart }) => {
             {fruit.offers !== 0 && (
                 <p className="fruit-offers"><strong>Offers</strong> {fruit.offers}</p>
             )}
-            <p className="fruit-image"><strong>""Idhar Image dalna hai SHREYAA""</strong> {fruit.imageUrl}</p>
+            {/* <p className="fruit-image"><strong>""Idhar Image dalna hai SHREYAA""</strong> {fruit.imageUrl}</p> */}
             <p>Discription : {fruit.discription}</p>
             {/* <input
                 type="number"

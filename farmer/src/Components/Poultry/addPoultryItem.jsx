@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddPoultryItem = (poultry) => {
+const AddPoultryItem = ({poultry}) => {
   return (
     <div>
             <h3 className="fruit-name">{poultry.productName}</h3>
