@@ -73,6 +73,7 @@ function ProductForm() {
         <div className='fruits'>
 
             <div className="sj-product-form-container-custom">
+                <div className='fruits-Div'>
                 <h2>Add Fruits</h2>
                 <form className='Fruit-container' onSubmit={handleSubmit}>
                     <div className="w-3/4 sj-form-group-custom ">
@@ -87,25 +88,20 @@ function ProductForm() {
 
                 <div className='sj-product-form'>
                     <div className="sj-form-group-custom fruit-date1">
-                        <label htmlFor="dateOfHarvest" className='fruit-date1'>Date of Harvest:</label>
-                        <input type="date" id="dateOfHarvest" value={dateOfHarvest.toISOString().substr(0, 10)} onChange={(e) => setDateOfHarvest(new Date(e.target.value))} />
+                        <input type="date" id="dateOfHarvest" className='fruit-input' placeholder='Harvest-Date' value={dateOfHarvest.toISOString().substr(0, 10)} onChange={(e) => setDateOfHarvest(new Date(e.target.value))} />
+                        <span class="input-border"></span>
                     </div>
 
                     <div className="sj-form-group-custom fruit-date2">
-                    <label htmlFor="expiryDate" className='fruit-date2'>Expiry Date:</label>
-                    <input
-                        type="date"
-                        id="expiryDate"
-                        value={expiryDate.toISOString().substr(0, 10)} // Convert Date to ISO date format
-                        onChange={(e) => setExpiryDate(new Date(e.target.value))}
-                    />
+                    <input type="date" id="expiryDate" className='fruit-input' placeholder='Expiry-date'  value={expiryDate.toISOString().substr(0, 10)} // Convert Date to ISO date format
+                        onChange={(e) => setExpiryDate(new Date(e.target.value))} />
+                        <span class="input-border"></span>
                     </div>
                 </div>
                 
-                <div className='sj-product-form'>
                     <div className="sj-form-group-custom">
-                        <label htmlFor="price">Price:</label>
-                        <input type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                    <input type="number" id="price" className='fruit-input' placeholder='Price'  value={price} onChange={(e) => setPrice(e.target.value)} />
+                        <span class="input-border"></span>
                     </div>
                     <div className="sj-form-group-custom">
                         <textarea id="description" className='fruit-input' placeholder='Description' />
@@ -113,6 +109,7 @@ function ProductForm() {
                     </div>
                     <button type="submit" className='sj-button-custom'>Add Product</button>
                 </form>
+            </div>
             </div>
 
             <div className='sj-product-right'>

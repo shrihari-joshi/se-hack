@@ -6,6 +6,10 @@
   height: 100vh;
   margin-top: -1rem;
 }
+.fruits-Div{
+  padding: 2vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 .Fruit-container{
   display: flex;
   flex-direction: column;
@@ -16,9 +20,12 @@
   width: 30%;
   height: 100%;
   padding: 2rem;
-  background-color: #ffffff;
+  background-image: url(./image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   border-right:2px solid green;
+
 }
 
 .sj-form-group-custom {
