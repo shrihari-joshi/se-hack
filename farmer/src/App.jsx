@@ -26,7 +26,7 @@ function App() {
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/" element={<FarmerDashBoard />} />
           <Route path="/signup" element={<Register />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/bin" element={<Bin />} />
           <Route path="/milkproducts" element={<MilkProducts />} />

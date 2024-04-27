@@ -8,15 +8,11 @@
 }
 
 .sj-product-form-container-custom {
-  width: 30vw;
-  margin: 2rem;
-  margin-top: 5rem;
-  margin-left: 2rem; /* Align to the right */
-  padding: 0rem;
-  border: 0.1rem solid #6cba70; 
-  border-radius: 0.5rem;
+  width: 30%;
+  padding: 2rem;
   background-color: #f3fde8;
   position: fixed;
+  border-right:2px solid green;
 }
 
 .sj-form-group-custom {
@@ -46,7 +42,7 @@
 .sj-form-group-custom input[type="number"],
 .sj-form-group-custom textarea,
 .sj-form-group-custom select {
-  width: 80%; /* Change width to 100% for full width */
+  width: 80%;
   padding: 0.5rem;
   font-size: 1rem;
   border: 0.1rem solid #ccc;
@@ -60,12 +56,10 @@
   text-align: left;
   margin-left: -2rem;
   text-align: left;
-  /* margin-right: -1rem; */
 }
 .fruit-date2{
   text-align: left;
   margin-left: -1rem;
-  /* margin-right: -1rem; */
 }
 .sj-button-custom {
   background-color: #6cba70;
