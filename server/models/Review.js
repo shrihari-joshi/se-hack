@@ -17,11 +17,12 @@ const reviewSchema = new Schema({
         ref: 'User',
         required: true
     },
-    review : {
+    reviews : [{
         type : String,
         required : true
-    },
-    rating: {
+    }
+    ],
+    ratings : {
         type: Number,
         required: true,
         min: 1,

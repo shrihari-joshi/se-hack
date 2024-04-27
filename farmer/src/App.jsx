@@ -10,9 +10,9 @@ import Vegetables from './Components/Vegetables/Vegetables';
 import MilkProducts from './Components/MilkProducts/MilkProducts';
 import Poultry from './Components/Poultry/Poultry';
 import Profile from './Components/Profile';
-import Subsidies from './Components/Subsidies';
+import Subsidies from './Components/Subsidies/Subsidies';
 import Addfruit from './Components/Fruits/Addfruit';
-import Signup from './Components/SignIn/Signup/SignUp';
+
 
 function App() {
   return (
@@ -22,8 +22,9 @@ function App() {
       <Router>
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/" element={<Login />} />
-          <Route path="/farmerdashboard" element={<FarmerDashBoard />} />
+          <Route path="/" element={<FarmerDashBoard />} />
+          <Route path="/signup" element={<Register />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/bin" element={<Bin />} />
           <Route path="/milkproducts" element={<MilkProducts />} />
           <Route path="/poultry" element={<Poultry />} />
@@ -32,7 +33,6 @@ function App() {
           <Route path="/vegetables" element={<Vegetables />} />
           <Route path="/fruits" element={<Fruits />} />
           <Route path="/addfruit" element={<Addfruit />} />
-          <Route path="/signup" element={<Signup />} />
         </Routes>
       </Router>
     </div>

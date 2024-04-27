@@ -1,5 +1,6 @@
 import React from 'react'
 import "./FarmerDashBoard.css"
+import { Link } from 'react-router-dom'
 const FarmerDashBoard = () => {
     return (
         <div className='farmer-container'>
@@ -20,8 +21,8 @@ const FarmerDashBoard = () => {
                     <div className='f1'><p>Welcome to our farm</p></div>
                     <div className='f2'><span className='p1'>The Place Where</span><span className='p2'>Farmer directly connects to consumer</span></div>
                     <div className='farmers-buttons flex gap-10'>
-                        <button className="button-33" role="button">SignIn</button>
-                        <button className="button-33" role="button">SignUp</button>
+                        <button className="button-33" role="button"><Link to={'/login'}>SignIn</Link></button>
+                        <button className="button-33" role="button"><Link to={'/signup'}>SignUp</Link></button>
                     </div>
                 </div>
             </div>

@@ -38,13 +38,14 @@ exports.addProduct = async (req, res) => {
 };
 
 exports.getProducts = async (req, res) => {
-    const { username } = req.query
+    const { category } = req.query
     try {
-        const user = await User.findOne({ username })
-        if (!user) {
-            return 'User not registered'
-        }
-        const products = await Product.find()
+        // const user = await User.findOne({ username })
+        // if (!user) {
+        //     return 'User not registered'
+        // }
+
+        const products = await Product.find({ category })
         res.status(200).json(products)
     } catch (err) {
         console.log((err.message));
