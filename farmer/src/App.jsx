@@ -12,10 +12,9 @@ import Poultry from './Components/Poultry/Poultry';
 import Profile from './Components/Profile';
 import Subsidies from './Components/Subsidies/Subsidies';
 import Addfruit from './Components/Fruits/Addfruit';
-import Sell from './Components/sellPage/sell';
 import Register from './Components/SignIn/SignUp';
 import LoginPage from './Components/SignIn/Login/Login';
-import ProductForm from './Components/Fruits/Addfruit';
+import Sell from './Components/sellPage/sell';
 
 function App() {
   return (
@@ -28,6 +27,7 @@ function App() {
           <Route path="/" element={<FarmerDashBoard />} />
           <Route path="/signup" element={<Register />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/sell" element={<Sell />} />
           <Route path="/bin" element={<Bin />} />
           <Route path="/milkproducts" element={<MilkProducts />} />
           <Route path="/poultry" element={<Poultry />} />
@@ -35,11 +35,7 @@ function App() {
           <Route path="/subsidies" element={<Subsidies />} />
           <Route path="/vegetables" element={<Vegetables />} />
           <Route path="/fruits" element={<Fruits />} />
-          <Route path="/sell" element={<Sell />} />
-          <Route path="/addfruit" element={<ProductForm />} />
-          {/* <Route path="/addpoultry" element={<AddP />} /> */}
-          {/* <Route path="/addfruit" element={<ProductForm />} />
-          <Route path="/addfruit" element={<ProductForm />} /> */}
+          <Route path="/addfruit" element={<Addfruit />} />
         </Routes>
       </Router>
     </div>

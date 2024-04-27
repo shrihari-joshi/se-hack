@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Addfruit.css'; // Import CSS file for styling
 
-function ProductForm() {
+function Addvege() {
     // State variables for form fields
     const [productName, setProductName] = useState('');
     const [dateOfHarvest, setDateOfHarvest] = useState('');
@@ -18,9 +18,8 @@ function ProductForm() {
         event.preventDefault();
         // Handle form submission logic here
         const response = await axios.post('http://localhost/3500/farmer/addproduct', {
-            farmername: user.username || user.farmername,
             productName: productName,
-            category: 'fruit',
+
             dateOfHarvest: dateOfHarvest,
             price: price,
             offer: offer,
@@ -69,4 +68,4 @@ function ProductForm() {
     );
 }
 
-export default ProductForm;
+export default Addvege;
