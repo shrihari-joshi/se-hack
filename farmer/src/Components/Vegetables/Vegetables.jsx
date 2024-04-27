@@ -3,11 +3,11 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState, useEffect } from 'react';
-import FruitsItem from './FruitsItem';
+import VegetableItems from './VegetableItems';
 
-const Fruits = () => {
+const Vegetables = () => {
 
-  const [fruits, setFruits] = useState([]);
+  const [vegetables, setVegetables] = useState([]);
   const userData = localStorage.getItem('currentUser');
   const user = userData ? JSON.parse(userData) : null;
 
@@ -15,32 +15,32 @@ const Fruits = () => {
   const notifyWarning = (msg) => toast.warn(msg, { position: 'top-center'})
   const notifySuccess = (msg) => toast.success(msg, { position: 'top-center' });
 
-  const fetchFruits = async () => {
+  const fetchVegetables = async () => {
     try {
         const response = await axios.get('http://localhost:3500/getAllFruits');
         console.log(response.data);
-        setFruits(response.data);
+        setVegetables(response.data);
     } catch (error) {
         notifyError(error.message);
     }
 };
 
 useEffect(() => {
-    fetchFruits();
+    fetchVegetables();
 }, []);
 
 
   return (
     <div>
             <div className='mainbase'>
-                <p className='base'>Get Fresh Fruits</p>
+                <p className='base'>Get Fresh Vegetables</p>
             </div>
             <ul className='products'>
-                {fruits.map((fruit, index) => (
+                {vegetables.map((vegetable, index) => (
                     <li key={index}>
                         <div> 
-                            <FruitsItem
-                                fruit={fruit}
+                            <VegetableItems
+                                vegetable={vegetable}
                             />
                         </div>
                     </li>
@@ -51,4 +51,4 @@ useEffect(() => {
   )
 }
 
-export default Fruits
+export default Vegetables

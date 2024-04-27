@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const productSchema = new Schema({
+const productSchema = new mongoose.Schema({
     farmerId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Farmer',
@@ -62,7 +61,7 @@ const productSchema = new Schema({
         required: true
     },
     certifications: {
-        type: [String] // Assuming an array of certification names
+        type: [String] // Array of certification names
     },
     isRecommended: {
         type: Boolean,
