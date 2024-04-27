@@ -30,6 +30,31 @@ useEffect(() => {
 }, []);
 
 
+const addToCart = async (vegetable, quantity) => {
+    try {
+        if (user) {
+            const response = await axios.post('http://localhost:3500/addToCart', {
+                username: user.username,
+                name: vegetable.name,
+                type: "vegetables",
+                quantity: quantity,
+            });
+            if (response.data.length === 0) {
+                <h1>Cart is empty</h1>
+            }
+            console.log(`${response.data} added to cart`);
+            notifySuccess(`${vegetable.name} added to cart successfully`);
+        }
+        else {
+            notifyWarning('Login to add items to Cart')
+        }
+        // navigate('/cart')
+    } catch (error) {
+        console.log(error);
+    }
+  };
+
+  
   return (
     <div>
             <div className='mainbase'>
@@ -41,6 +66,7 @@ useEffect(() => {
                         <div> 
                             <VegetableItems
                                 vegetable={vegetable}
+                                addToCart={addToCart}
                             />
                         </div>
                     </li>

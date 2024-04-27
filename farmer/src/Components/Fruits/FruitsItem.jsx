@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FruitsItem = ({ fruit }) => { 
+const FruitsItem = ({ fruit, addToCart }) => { 
     const [selectedQuantity, setSelectedQuantity] = useState(1);
 
     const handleQuantityChange = (e) => {
@@ -15,7 +15,7 @@ const FruitsItem = ({ fruit }) => {
             {fruit.offers !== 0 && (
                 <p className="fruit-offers"><strong>Offers</strong> {fruit.offers}</p>
             )}
-            <p className="fruit-iamge"><strong>""Idhar Image dalna hai SHREYAA""</strong> {fruit.imageUrl}</p>
+            <p className="fruit-image"><strong>""Idhar Image dalna hai SHREYAA""</strong> {fruit.imageUrl}</p>
 
             <input
                 type="number"
@@ -24,6 +24,9 @@ const FruitsItem = ({ fruit }) => {
                 onChange={handleQuantityChange}
                 className="fruit-quantity"
             />
+            <div className="btn-container">
+                <button onClick={() => addToCart(fruit, selectedQuantity)} className="fruit-btn">Add To Cart</button>
+            </div>
            
         </div>
     );
