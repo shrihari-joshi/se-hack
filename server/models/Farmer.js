@@ -21,8 +21,8 @@ const farmerSchema = new Schema({
     },
     aadharNumber: {
         type: String,
-        required: true,
-        unique: true
+        // required: true,
+        // unique: true
     },
     address: {
         type : mongoose.Schema.Types.ObjectId,

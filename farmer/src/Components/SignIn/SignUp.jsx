@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate,Link } from 'react-router-dom';
-import Login from './Login';
+import Login from './Login/Login';
 import Loading from '../Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
-import './Register.css';
+// import './Register.css';
 
 const Register = () => {
+    const [userfarmer, setUserFarmer] = useState('farmer')
     const [Name, setName] = useState()
     const [username, setUsername] = useState('');
     const [Phone, setPhone] = useState('');
@@ -50,17 +51,22 @@ const Register = () => {
 
         const user = 
         {
-            Name : Name,
-            Phone: Phone,
-            username: username,
-            password: pass
+            name : Name,
+            phoneNumber: Phone,
+            username : username,
+            // farmer : farmername,
+            password: pass,
+            // address : {
+            //     street : Street,
+            //     city : City
+            // }
         };
 
         try 
         {
             setLoading(true);
-            const response = await axios.post('http://localhost:3500/register', user);
-                notifySuccess(`${user.username} has been registered`)
+            const response = await axios.post('http://localhost:3500/farmer/register', user);
+                notifySuccess(`${user.username} has been registered as ${userfarmer}`)
                 console.log(response + '\nregistered');
                 setName('')
                 setUsername('');
@@ -125,7 +131,7 @@ const Register = () => {
                         type='Street'
                         id='Street'
                         value={Street}
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={(e) => setStreet(e.target.value)}
                         className='input1'
                         title='Enter your Street'
                     />

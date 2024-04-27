@@ -35,7 +35,7 @@ const productSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['milk_product', 'vegetable', 'fruit', 'poultry'],
+        enum: ['diary', 'vegetable', 'fruit', 'poultry'],
         required: true
     },
     bundles: {
@@ -50,7 +50,7 @@ const productSchema = new mongoose.Schema({
     },
     imageUrl: {
         type: String,
-        required: true
+        // required: true
     },
     productName: {
         type: String,

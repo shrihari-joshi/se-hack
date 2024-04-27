@@ -17,7 +17,11 @@ const Fruits = () => {
 
   const fetchFruits = async () => {
     try {
-        const response = await axios.get('http://localhost:3500/getAllFruits');
+        const response = await axios.get('http://localhost:3500/getallproducts', {
+            params : {
+                category : 'fruit'
+            }
+        });
         console.log(response.data);
         setFruits(response.data);
     } catch (error) {
