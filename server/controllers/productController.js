@@ -3,7 +3,7 @@ const Product = require('../models/Product');
 const User = require('../models/User'); 
 
 exports.addProduct = async (req, res) => {
-    const { farmername, date, price, offers, discountPrice, quantity, couponOffer, category, bundles, deals, imageUrl, productName, description, isRecommended, certifications } = req.body;
+    const { farmername, dateOfHarvest,dateOfExpiry, price, offers, discountPrice, quantity, couponOffer, category, bundles, deals, imageUrl, productName, description, isRecommended, certifications } = req.body;
 
     try {
         const farmer = await Farmer.findOne({ farmername });
@@ -14,7 +14,8 @@ exports.addProduct = async (req, res) => {
 
         const newProduct = await Product.create({
             farmerId: farmer._id, 
-            dateOfHarvest: new Date(date), 
+            dateOfHarvest: dateOfHarvest, 
+            dateOfExpiry : dateOfExpiry,
             price,
             offers,
             discountPrice,
@@ -29,7 +30,7 @@ exports.addProduct = async (req, res) => {
             isRecommended,
             certifications: certifications 
         });
-
+        console.log('product registered');
         res.status(201).json({ success: true, product: newProduct });
     } catch (err) {
         console.error(err.message);
@@ -40,12 +41,10 @@ exports.addProduct = async (req, res) => {
 exports.getProducts = async (req, res) => {
     const { category } = req.query
     try {
-        // const user = await User.findOne({ username })
-        // if (!user) {
-        //     return 'User not registered'
-        // }
-
         const products = await Product.find({ category })
+        const productItems = products.map((productItem, index) => {
+            productItem.discountPrice = parseInt
+        })
         res.status(200).json(products)
     } catch (err) {
         console.log((err.message));

@@ -24,6 +24,7 @@ app.use('/pdfs', express.static('upload/pdfs'));
 app.use('/', require('./routes/register'))
 app.use('/', require('./routes/login'))
 app.use('/', require('./routes/uploads'))
+app.use('/', require('./routes/product'))
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');

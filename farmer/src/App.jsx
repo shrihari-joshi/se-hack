@@ -15,6 +15,9 @@ import Addfruit from './Components/Fruits/Addfruit';
 import Register from './Components/SignIn/SignUp';
 import LoginPage from './Components/SignIn/Login/Login';
 import Sell from './Components/sellPage/sell';
+import Addmilk from './Components/MilkProducts/Addmilk';
+import Addvege from './Components/Vegetables/Addvege';
+import Addpoultry from './Components/Poultry/Addpoultry';
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
           <Route path="/vegetables" element={<Vegetables />} />
           <Route path="/fruits" element={<Fruits />} />
           <Route path="/addfruit" element={<Addfruit />} />
+          <Route path="/adddairy" element={<Addmilk />} />
+          <Route path="/addvegetable" element={<Addvege />} />
+          <Route path="/addpoultry" element={<Addpoultry />} />
         </Routes>
       </Router>
     </div>

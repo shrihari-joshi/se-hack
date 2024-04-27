@@ -1,50 +1,94 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Addpoultry.css'; // Import CSS file for styling
+import AddPoultryItem from './addPoultryItem';
 
-function Addpoultry() {
+function AddPoultry() {
     // State variables for form fields
+    const [poultries, setPoultries] = useState([]);
     const [productName, setProductName] = useState('');
-    const [dateOfHarvest, setDateOfHarvest] = useState('');
-    const [expiryDate, setExpiryDate] = useState('');
+    const [dateOfHarvest, setDateOfHarvest] = useState(new Date());
+    const [expiryDate, setExpiryDate] = useState(new Date());
     const [quantity, setQuantity] = useState('');
     const [price, setPrice] = useState('');
     const [offer, setOffer] = useState('');
-    const [discription, setDiscription] = useState('')
+    const [description, setDescription] = useState('');
+    const user = JSON.parse(localStorage.getItem('user'));
 
-    const user = JSON.parse(localStorage.getItem('user'))
     // Function to handle form submission
     const handleSubmit = async (event) => {
         event.preventDefault();
         // Handle form submission logic here
-        const response = await axios.post('http://localhost/3500/farmer/addproduct', {
-            productName: productName,
-           
-            dateOfHarvest: dateOfHarvest,
-            price: price,
-            offer: offer,
-            discription: discription,
-            quantity: quantity
-        })
-        console.log(response.data);
+        try {
+            const response = await axios.post('http://localhost:3500/addproduct', {
+                farmername: user.username || user.farmername,
+                productName: productName,
+                category: "poultry",
+                dateOfHarvest: dateOfHarvest,
+                dateOfExpiry: expiryDate,
+                price: price,
+                offer: offer,
+                description: description,
+                quantity: quantity
+            });
+            console.log(response.data);
+
+            // Reset form fields after successful submission
+            setProductName('');
+            setDateOfHarvest(new Date());
+            setExpiryDate(new Date());
+            setQuantity('');
+            setPrice('');
+            setOffer('');
+            setDescription('');
+
+            notifySuccess('Product added successfully!');
+        } catch (error) {
+            console.log(error.message);
+            notifyError('Failed to add product.');
+        }
+    };
+
+    const notifyError = (msg) => toast.error(msg, { position: 'top-center' });
+    const notifyWarning = (msg) => toast.warn(msg, { position: 'top-center' });
+    const notifySuccess = (msg) => toast.success(msg, { position: 'top-center' });
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://localhost:3500/getallproducts', {
+                params : {
+                    category : 'poultry'
+                }
+            });
+            console.log(response.data);
+            setPoultries(response.data);
+        } catch (error) {
+            console.log(error.message);
+            notifyError(error.message);
+        }
     };
 
     return (
         <div className="product-form-container">
-            <h2>Add Product</h2>
+            <h2>Add Poultry Product</h2>
             <form onSubmit={handleSubmit}>
-                
                 <div className="form-group">
                     <label htmlFor="productName">Product Name:</label>
                     <input type="text" id="productName" value={productName} onChange={(e) => setProductName(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="dateOfHarvest">Date of Harvest:</label>
-                    <input type="date" id="dateOfHarvest" value={dateOfHarvest} onChange={(e) => setDateOfHarvest(e.target.value)} />
+                    <input type="date" id="dateOfHarvest" value={dateOfHarvest.toISOString().substr(0, 10)} onChange={(e) => setDateOfHarvest(new Date(e.target.value))} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="expiryDate">Expiry Date:</label>
-                    <input type="date" id="expiryDate" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
+                    <input type="date" id="expiryDate" value={expiryDate.toISOString().substr(0, 10)} onChange={(e) => setExpiryDate(new Date(e.target.value))} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="quantity">Quantity:</label>
@@ -59,13 +103,27 @@ function Addpoultry() {
                     <input type="number" id="offer" value={offer} onChange={(e) => setOffer(e.target.value)} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="discription">discription:</label>
-                    <input type="number" id="discription" value={discription} onChange={(e) => setDiscription(e.target.value)} />
+                    <label htmlFor="description">Description:</label>
+                    <textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
                 <button type="submit">Add Product</button>
             </form>
+            <div className='sj-product-right'>
+                <ul className='sj-products'>
+                    {poultries.map((poultry, index) => (
+                        <li key={index}>
+                            <div> 
+                                <AddPoultryItem
+                                    poultry={poultry}
+                                />
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
         </div>
     );
 }
 
-export default Addpoultry;
+export default AddPoultry;
