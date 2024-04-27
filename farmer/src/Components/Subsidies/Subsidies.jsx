@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Subsidies.css'
+import Sell from '../sellPage/sell';
 
 const Subsidies = () => {
   const [formData, setFormData] = useState({
@@ -43,7 +44,12 @@ const Subsidies = () => {
   };
 
   return (
+    <div>
+        <div>
+          <Sell/>
+        </div>
     <form onSubmit={handleSubmit}>
+
       <label htmlFor="name">Name:</label>
       <input
         type="text"
@@ -52,7 +58,7 @@ const Subsidies = () => {
         value={formData.name}
         onChange={handleChange}
         required
-      />
+        />
 
       <label htmlFor="age">Age:</label>
       <input
@@ -62,7 +68,7 @@ const Subsidies = () => {
         value={formData.age}
         onChange={handleChange}
         required
-      />
+        />
 
       <label htmlFor="mobileNumber">Mobile Number:</label>
       <input
@@ -72,7 +78,7 @@ const Subsidies = () => {
         value={formData.mobileNumber}
         onChange={handleChange}
         required
-      />
+        />
 
       <label>Documents Available:</label>
       <div>
@@ -94,7 +100,7 @@ const Subsidies = () => {
           checked={formData.documents.passportPhoto}
           onChange={handleChange}
           required
-        />
+          />
         <label htmlFor="passportPhoto">Passport Sized Photo</label>
       </div>
       <div>
@@ -105,7 +111,7 @@ const Subsidies = () => {
           checked={formData.documents.bankPassbook}
           onChange={handleChange}
           required
-        />
+          />
         <label htmlFor="bankPassbook">Bank Account Passbook</label>
       </div>
       <div>
@@ -116,7 +122,7 @@ const Subsidies = () => {
           checked={formData.documents.utilityBill}
           onChange={handleChange}
           required
-        />
+          />
         <label htmlFor="utilityBill">Electricity/Water Bill</label>
       </div>
       <div>
@@ -127,7 +133,7 @@ const Subsidies = () => {
           checked={formData.documents.vehicleRC}
           onChange={handleChange}
           required
-        />
+          />
         <label htmlFor="vehicleRC">RC (for vehicle-related schemes)</label>
       </div>
 
@@ -139,7 +145,7 @@ const Subsidies = () => {
         value={formData.farmArea}
         onChange={handleChange}
         required
-      />
+        />
 
       <label htmlFor="soilType">Type of Soil:</label>
       <input
@@ -149,10 +155,11 @@ const Subsidies = () => {
         value={formData.soilType}
         onChange={handleChange}
         required
-      />
+        />
 
       <button type="submit">Submit</button>
     </form>
+    </div>
   );
 };
 

@@ -32,7 +32,6 @@ function ProductForm() {
         price: price,
         offer: offer,
         description: description,
-        // description: description,
         quantity: quantity
     })
     console.log(response.data);
@@ -44,7 +43,6 @@ function ProductForm() {
 
     const [fruits, setFruits] = useState([]);
     const userData = localStorage.getItem('currentUser');
-//   const user = userData ? JSON.parse(userData) : null;
 
   const notifyError = (msg) => toast.error(msg, { position: 'top-center' });
   const notifyWarning = (msg) => toast.warn(msg, { position: 'top-center'})
@@ -71,6 +69,7 @@ useEffect(() => {
 
     return (
         <div className='fruits'>
+            
 
         <div className="sj-product-form-container-custom">
             <h2>Add Fruits</h2>
