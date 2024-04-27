@@ -6,9 +6,9 @@ import FarmerDashBoard from './Components/FarmerDashBoard/FarmerDashBoard';
 import Login from './Components/SignIn/Login'
 import Home from './Components/Home';
 import Fruits from './Components/Fruits/Fruits';
-import Vegetables from './Components/Vegetables';
+import Vegetables from './Components/Vegetables/Vegetables';
 import MilkProducts from './Components/MilkProducts/MilkProducts';
-import Poultry from './Components/Poultry';
+import Poultry from './Components/Poultry/Poultry';
 import Profile from './Components/Profile';
 import Subsidies from './Components/Subsidies';
 
