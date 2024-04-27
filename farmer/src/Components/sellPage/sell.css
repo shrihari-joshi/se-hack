@@ -1,6 +1,12 @@
+.sell-container{
+    overflow: hidden;
+    overflow-y: hidden;
+}
 .inner-header {
-    box-shadow: 0px 4px 1px 0px rgba(0, 0, 0, 0.11);
-    background-color: #dddd;
+    box-shadow: 0px 4px 1px 0px rgb(4, 83, 13);
+    background-color: #474947;
+    background: transparent;
+    z-index: 10;
   }
   
   .container-header {
@@ -15,7 +21,7 @@
     padding: 0px 22px;
   }
   
-  .logo > a {
+  .logo1 > a {
     text-decoration: none;
     color: black;
     font-weight: 500;
@@ -104,11 +110,102 @@
       content: none;
     }
   }
-  .profile{
-    height: 4vh;
-    width: 2vw;
-    background-image: url(./image.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%  ;
+  
+#wrapper {
+    margin-top: 0.3%;
+    width:100vw;
+    height: 90vh;
+    float: right;
+    position:relative;
+    clip-path: polygon(63% 0, 100% 0, 100% 100%, 40% 100%);
+  }
+  
+  #wrapper p {
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+    font-family: "Arial Black", sans-serif;
+    text-shadow: 2px 2px #555;
+  }
+  
+  #slideshow {
+    border: 1px solid #fff;
+    background: url(../images/6482ec181d73d_central-government-schemes-for-farmers-in-india.webp) no-repeat; /* this default image will show where browsers unable to process the [animation] function */
+    background-size: 100% 100%;
+    height: 90vh;
+    width:60vw;
+    float:right;
+    -webkit-animation: slider 10s infinite ease-in-out;
+    -webkit-animation-direction: alternate;
+    animation: slider 10s infinite ease-in-out;
+    animation-direction: alternate;
+  }
+  
+  @-webkit-keyframes slider {
+    0% {
+      background: url(../images/image8.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    25% {
+      background: url(../images/image9.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    50% {
+      background: url(../images/image10.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    100% {
+      background: url(../images/image11.png) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  
+  @keyframes slider {
+    0% {
+        background: url(../images/image8.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      25% {
+        background: url(../images/image9.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      50% {
+        background: url(../images/image10.png) no-repeat; 
+        background-size: 100% 100%;
+      }
+      100% {
+        background: url(../images/image11.png) no-repeat;
+        background-size: 100% 100%;
+      }
+  }
+  
+  .logo {
+    position: relative;
+    width: 60%;
+    height: 100%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    #wrapper {
+      width: 100%;
+      margin:1em auto;
+    }
+    
+    #wrapper p {
+   font-size: 1.25em;
+   letter-spacing:0.15em;
+   text-shadow: 2px 1px #000;
+   overflow:hidden;
+   }
+          
+    #slideshow {
+      width: 100%;
+      height: auto;
+      background-size: cover;
+    }
+    #slideshow img {
+      max-width: 100%;
+      margin: 0 auto;
+    }
   }
   
