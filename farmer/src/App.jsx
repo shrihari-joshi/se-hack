@@ -11,12 +11,13 @@ import MilkProducts from './Components/MilkProducts/MilkProducts';
 import Poultry from './Components/Poultry/Poultry';
 import Profile from './Components/Profile';
 import Subsidies from './Components/Subsidies';
-
+import Addfruit from './Components/Fruits/Addfruit';
 
 
 function App() {
   return (
     <div className="App">
+
 
       <Router>
         <Routes>
@@ -30,6 +31,7 @@ function App() {
           <Route path="/subsidies" element={<Subsidies />} />
           <Route path="/vegetables" element={<Vegetables />} />
           <Route path="/fruits" element={<Fruits />} />
+          <Route path="/addfruit" element={<Addfruit />} />
         </Routes>
       </Router>
     </div>
