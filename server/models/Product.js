@@ -7,8 +7,12 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     dateOfHarvest: {
-        type: Date,
-        required: true
+        type: String,
+        // required: true
+    },
+    dateOfExpiry: {
+        type: String,
+        // required: true
     },
     price: {
         type: Number,
@@ -35,7 +39,7 @@ const productSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['diary', 'vegetable', 'fruit', 'poultry'],
+        enum: ['dairy', 'vegetable', 'fruit', 'poultry'],
         required: true
     },
     bundles: {

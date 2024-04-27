@@ -10,12 +10,11 @@ import FruitsItem from './FruitsItem';
 function ProductForm() {
     // State variables for form fields
     const [productName, setProductName] = useState('');
-    const [dateOfHarvest, setDateOfHarvest] = useState('');
-    const [expiryDate, setExpiryDate] = useState('');
+    const [dateOfHarvest, setDateOfHarvest] = useState(new Date());
+    const [expiryDate, setExpiryDate] = useState(new Date());
     const [quantity, setQuantity] = useState('');
     const [price, setPrice] = useState('');
     const [offer, setOffer] = useState('');
-    // const [description, setDescription] = useState('');
     const [description, setDescription] = useState('');
 
     const user = JSON.parse(localStorage.getItem('user'))
@@ -23,12 +22,13 @@ function ProductForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         // Handle form submission logic here
-        try {
-            const response = await axios.post('http://localhost/3500/addproduct', {
+        try{
+            const response = await axios.post('http://localhost:3500/addproduct', {
                 farmername: user.username || user.farmername,
                 productName: productName,
                 category: "fruit",
                 dateOfHarvest: dateOfHarvest,
+                dateOfExpiry: expiryDate,
                 price: price,
                 offer: offer,
                 description: description,
@@ -37,7 +37,7 @@ function ProductForm() {
             })
             console.log(response.data);
         }
-        catch (error) {
+        catch(error){
             console.log(error.message)
         }
     };
@@ -85,27 +85,27 @@ function ProductForm() {
                         <span class="input-border"></span>
                     </div>
 
-                    <div className='sj-product-form'>
-                        <div className="sj-form-group-custom fruit-date1 mr-2">
-                            <input type="date" id="dateOfHarvest" className='fruit-input' placeholder='HarvestDate' value={dateOfHarvest} onChange={(e) => setDateOfHarvest(e.target.value)} />
-                            <span class="input-border"></span>
-                        </div>
-
-                        <div className="sj-form-group-custom fruit-date2">
-                            <input type="date" id="expiryDate" className='fruit-input' placeholder='Expiry-Date' value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
-                            <span class="input-border"></span>
-                        </div>
+                <div className='sj-product-form'>
+                    <div className="sj-form-group-custom fruit-date1">
+                        <label htmlFor="dateOfHarvest" className='fruit-date1'>Date of Harvest:</label>
+                        <input type="date" id="dateOfHarvest" value={dateOfHarvest.toISOString().substr(0, 10)} onChange={(e) => setDateOfHarvest(new Date(e.target.value))} />
                     </div>
 
-                    <div className='sj-product-form'>
-                        <div className="sj-form-group-custom">
-                            <input type="number " id="price" className='fruit-input' placeholder='Price' value={price} onChange={(e) => setPrice(e.target.value)} />
-                            <span class="input-border"></span>
-                        </div>
-                        <div className="sj-form-group-custom">
-                            <input type="number " id="offer" className='fruit-input' placeholder='Offer' value={description} onChange={(e) => setDescription(e.target.value)} />
-                            <span class="input-border"></span>
-                        </div>
+                    <div className="sj-form-group-custom fruit-date2">
+                    <label htmlFor="expiryDate" className='fruit-date2'>Expiry Date:</label>
+                    <input
+                        type="date"
+                        id="expiryDate"
+                        value={expiryDate.toISOString().substr(0, 10)} // Convert Date to ISO date format
+                        onChange={(e) => setExpiryDate(new Date(e.target.value))}
+                    />
+                    </div>
+                </div>
+                
+                <div className='sj-product-form'>
+                    <div className="sj-form-group-custom">
+                        <label htmlFor="price">Price:</label>
+                        <input type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
                     </div>
                     <div className="sj-form-group-custom">
                         <textarea id="description" className='fruit-input' placeholder='Description' />

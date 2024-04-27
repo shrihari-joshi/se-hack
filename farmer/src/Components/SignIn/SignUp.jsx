@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate,Link } from 'react-router-dom';
+<<<<<<< HEAD
 import Login from '../SignIn/Login/Login';
 import Loading from '../Loading';
+=======
+import Login from './Login/Login';
+>>>>>>> aadf188c60d392e99e3559a33ad44d575dce6a94
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
@@ -231,7 +235,6 @@ const Register = () => {
                 </div>
                 <button className='regbutton' type='submit' onClick={handleSubmit}>Register</button>
             </form>
-            {loading && <Loading />}
             <ToastContainer position="bottom-center" autoClose={2000} hideProgressBar={true} />
         </div>
     );
