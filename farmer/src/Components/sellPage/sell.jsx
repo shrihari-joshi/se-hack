@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { CgProfile } from "react-icons/cg";
-import 'react-slideshow-image/dist/styles.css'
+// import 'react-slideshow-image/dist/styles.css'
 import './sell.css';
 import Image1 from '../images/image8.png'
 import Image2 from '../images/image9.png'

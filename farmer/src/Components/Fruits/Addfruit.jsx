@@ -112,6 +112,7 @@ function ProductForm() {
                         <span class="input-border"></span>
                     </div>
                     <button type="submit" className='sj-button-custom'>Add Product</button>
+                </div>
                 </form>
             </div>
 
