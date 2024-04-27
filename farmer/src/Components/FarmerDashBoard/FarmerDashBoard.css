@@ -11,7 +11,7 @@ body{
 .shadow-patch{
     height: 100vh;
     width:4px;
-    background:transparent;;
+    background: transparent;
 }
 .farmer-left{
     background-color: #142A15;
@@ -20,7 +20,7 @@ body{
     width: 60%;
 }
 .farmer-right{
-    background-image:url(./image.png);
+    /* background-image:url(./image.png); */
     background-repeat: no-repeat;
     background-size: cover;
     height:100%;
