@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // Import the CSS file for styling
-
+import axios from 'axios';
+import './Login.css'; // Import the CSS file 
 
 const LoginPage = () => {
     const [loginType, setLoginType] = useState('');
@@ -10,14 +10,22 @@ const LoginPage = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const history = useNavigate();
 
-    const handleLogin = () => {
-        if (loginType === 'farmer') {
-            // Perform farmer login logic here
-            // For demonstration, just redirect to a specific route
-            history('/sell');
-        } else {
-            // Perform consumer login logic here
-            // Redirect to consumer dashboard or perform other actions
+    const handleLogin = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await axios.get(`http://localhost:3500/${loginType}/login` , {
+                params : {
+                    username: username,
+                    farmername: username, 
+                    password : password
+                }
+            })
+            localStorage.setItem('user', JSON.stringify(response.data));
+            console.log(response.data);
+            history('/sell')
+        } catch (err) {
+            console.log(err.message);
+
         }
     };
 
@@ -27,7 +35,8 @@ const LoginPage = () => {
                 <h2>Login</h2>
                 <div className="login-options">
                     <button onClick={() => setLoginType('farmer')}> Farmer</button>
-                    <button onClick={() => setLoginType('consumer')}> Consumer</button>
+                    <button onClick={() => setLoginType('user')}> User</button>
+
                 </div>
                 {loginType && (
                     <form className="login-form" onSubmit={handleLogin}>

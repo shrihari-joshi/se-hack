@@ -15,6 +15,7 @@ function ProductForm() {
     const [quantity, setQuantity] = useState('');
     const [price, setPrice] = useState('');
     const [offer, setOffer] = useState('');
+    // const [description, setDescription] = useState('');
     const [description, setDescription] = useState('');
 
     const user = JSON.parse(localStorage.getItem('user'))
@@ -22,17 +23,23 @@ function ProductForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         // Handle form submission logic here
-        const response = await axios.post('http://localhost/3500/farmer/addproduct', {
-            farmername : user.username || user.farmername,
-            productName: productName,
-            
-            dateOfHarvest: dateOfHarvest,
-            price: price,
-            offer: offer,
-            description: description,
-            quantity: quantity
-        })
-        console.log(response.data);
+ try{
+    const response = await axios.post('http://localhost/3500/addproduct', {
+        farmername: user.username || user.farmername,
+        productName: productName,
+        category: "fruit",
+        dateOfHarvest: dateOfHarvest,
+        price: price,
+        offer: offer,
+        description: description,
+        // description: description,
+        quantity: quantity
+    })
+    console.log(response.data);
+ }
+ catch(error){
+    console.log(error.message)
+ }
     };
 
     const [fruits, setFruits] = useState([]);
@@ -83,13 +90,13 @@ useEffect(() => {
                 </div>
 
                 <div className='sj-product-form'>
-                    <div className="sj-form-group-custom">
-                        <label htmlFor="dateOfHarvest">Date of Harvest:</label>
+                    <div className="sj-form-group-custom fruit-date1">
+                        <label htmlFor="dateOfHarvest" className='fruit-date1'>Date of Harvest:</label>
                         <input type="date" id="dateOfHarvest" value={dateOfHarvest} onChange={(e) => setDateOfHarvest(e.target.value)} />
                     </div>
 
-                    <div className="sj-form-group-custom">
-                    <label htmlFor="expiryDate">Expiry Date:</label>
+                    <div className="sj-form-group-custom fruit-date2">
+                    <label htmlFor="expiryDate" className='fruit-date2'>Expiry Date:</label>
                     <input type="date" id="expiryDate" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
                     </div>
                 </div>
@@ -105,7 +112,7 @@ useEffect(() => {
                     </div>
                 </div>
                 <div className="sj-form-group-custom">
-                    <label htmlFor="description">Description:</label>
+                    <label htmlFor="description" className='descrip'>Description:</label>
                     <textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
                 <button type="submit" className='sj-button-custom'>Add Product</button>

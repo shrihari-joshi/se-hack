@@ -2,27 +2,23 @@ const User = require('../models/User')
 const Farmer = require('../models/Farmer')
 
 exports.loginFarmer = async (req, res) => {
-    const { phoneNumber, farmername , password } = req.query;
-
+    const {  farmername , password } = req.query;
+    
     try {
-        if (!phoneNumber && !farmername) {
+        console.log('login controller invoked');
+        if (!farmername) {
             return res.status(400).json({ error: 'Enter phone number or farmername' });
         }
 
-        let farmer;
-        if (phoneNumber) {
-            farmer = await Farmer.findOne({ phoneNumber });
-        } else {
-            farmer = await Farmer.findOne({ farmername });
-        }
+        const farmer = await Farmer.findOne({ farmername })
 
         if (!farmer) {
-            return res.status(401).json({ error: 'Invalid credentials' });
+            return res.status(401).json({ error: 'Farmer not found' });
         }
         if (password !== farmer.password) {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
-
+        console.log(`${farmer.farmername} logged in`);
         res.status(200).json(farmer);
     } catch (error) {
         console.error(error.message);

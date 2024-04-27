@@ -35,9 +35,12 @@
   font-weight: bold;
   font-size: 1.2em;
   text-align: left;
-  margin-left: 3.5rem;
+  margin-left: 1rem;
+  
 }
-
+.descrip{
+  margin-left: 2rem ;
+}
 .sj-form-group-custom input[type="text"],
 .sj-form-group-custom input[type="date"],
 .sj-form-group-custom input[type="number"],
@@ -50,16 +53,26 @@
   border-radius: 0.4rem;
   margin-bottom: 1rem;
 }
-
 .sj-form-group-custom textarea {
   height: 1rem;
 }
-
+.fruit-date1{
+  text-align: left;
+  margin-left: -2rem;
+  text-align: left;
+  /* margin-right: -1rem; */
+}
+.fruit-date2{
+  text-align: left;
+  margin-left: -1rem;
+  /* margin-right: -1rem; */
+}
 .sj-button-custom {
   background-color: #6cba70;
   color: white;
   padding: 1rem 1rem;
   border: none;
+  border-radius: 0.4rem;
   border-radius: 0.4rem;
   cursor: pointer;
   font-size: 1rem;
