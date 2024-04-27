@@ -12,8 +12,8 @@ const FarmerDashBoard = () => {
                 <nav className="navbar">
                     <div className="container pt-">
                         <ul className="nav-links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact</a></li>
+                            {/* <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li> */}
                         </ul>
                     </div>
                 </nav>

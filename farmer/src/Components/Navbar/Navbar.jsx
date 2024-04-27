@@ -4,17 +4,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { CgProfile } from "react-icons/cg";
-// import 'react-slideshow-image/dist/styles.css'
-import './sell.css';
-import Image1 from '../images/image8.png'
-import Image2 from '../images/image9.png'
-import Image3 from '../images/image10.png'
-
-const Sell = () => {
-
-    const images = [
-        Image1, Image2, Image3
-    ];
+import './Navbar.css'
+const Navbar = () => {
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [profileAnchorEl, setProfileAnchorEl] = useState(null);
@@ -32,16 +23,18 @@ const Sell = () => {
         setProfileAnchorEl(null);
     };
 
-    return (
-        <div className='sell-container'>
-            <header>
+  return (
+    <div>
+        <header>
                 <div class="inner-header">
                     <div class="container-header">
                         <div class="main-header">
                             <div class="bars" id="open">
-                            
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                                </svg>
                             </div>
-                            <div class="logo1">
+                            <div class="logo">
                                 <a href="#">Kisan Sangraha</a>
                             </div>
                             <nav class="list-items active" id="show">
@@ -51,10 +44,11 @@ const Sell = () => {
                                             id="home-button"
                                             aria-controls={anchorEl ? 'home-menu' : undefined}
                                             aria-haspopup="true"
+                                            className='button12'
                                             // onClick={handleMenuClick}
                                         >
-                                            <Link to={'/sell'}>Home</Link>
-
+                                            {/* <Link to={'/home'}>Home</Link> */}
+                                            Home
                                         </Button>
                                     </li>
                                     <li>
@@ -63,7 +57,6 @@ const Sell = () => {
                                             aria-controls={anchorEl ? 'products-menu' : undefined}
                                             aria-haspopup="true"
                                             onClick={handleMenuClick}
-                                            className='text-white'
                                         >
                                             Products
                                         </Button>
@@ -95,9 +88,10 @@ const Sell = () => {
                                             id="schemes-button"
                                             aria-controls={anchorEl ? 'schemes-menu' : undefined}
                                             aria-haspopup="true"
-                                            // onClick={handleMenuClick}
+                                            
+                                            
                                         >
-                                            Schemes
+                                            <Link to={'/subsidies'}>Schemes</Link>
                                         </Button>
                                     </li>
                                     <li>
@@ -105,9 +99,9 @@ const Sell = () => {
                                             id="storage-button"
                                             aria-controls={anchorEl ? 'storage-menu' : undefined}
                                             aria-haspopup="true"
-                                            // onClick={handleMenuClick}
+                                           
                                         >
-                                            Storage
+                                            <Link to={'/storage'}>Storage</Link>
                                         </Button>
                                     </li>
                                     <li>
@@ -117,7 +111,7 @@ const Sell = () => {
                                             aria-haspopup="true"
                                             onClick={handleProfileMenuClick}
                                         >
-                                            <div className="profile"><CgProfile size={25}/></div>
+                                            <div className="profile"></div>
                                         </Button>
                                         <Menu
                                             id="profile-menu"
@@ -139,13 +133,8 @@ const Sell = () => {
                     </div>
                 </div>
             </header>
-            <div id="wrapper">
-                <div id="slideshow">
-                    <div className="logo"></div>
-                </div>
-            </div>
-        </div>
-    )
+    </div>
+  )
 }
 
-export default Sell;
+export default Navbar
