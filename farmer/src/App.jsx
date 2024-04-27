@@ -10,7 +10,7 @@ import Vegetables from './Components/Vegetables/Vegetables';
 import MilkProducts from './Components/MilkProducts/MilkProducts';
 import Poultry from './Components/Poultry/Poultry';
 import Profile from './Components/Profile';
-import Subsidies from './Components/Subsidies';
+import Subsidies from './Components/Subsidies/Subsidies';
 
 
 
