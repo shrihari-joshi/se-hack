@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Subsidies.css'
 import Sell from '../sellPage/sell';
+import Navbar from '../Navbar/Navbar';
 
 const Subsidies = () => {
   const [formData, setFormData] = useState({
@@ -46,7 +47,7 @@ const Subsidies = () => {
   return (
     <div>
         <div>
-          <Sell/>
+          <Navbar/>
         </div>
     <form onSubmit={handleSubmit}>
 

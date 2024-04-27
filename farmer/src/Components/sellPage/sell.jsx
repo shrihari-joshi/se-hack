@@ -51,9 +51,9 @@ const Sell = () => {
                                             id="home-button"
                                             aria-controls={anchorEl ? 'home-menu' : undefined}
                                             aria-haspopup="true"
-                                            onClick={handleMenuClick}
+                                            // onClick={handleMenuClick}
                                         >
-                                            <Link to={'/home'}>Home</Link>
+                                            <Link to={'/sell'}>Home</Link>
 
                                         </Button>
                                     </li>
@@ -95,7 +95,7 @@ const Sell = () => {
                                             id="schemes-button"
                                             aria-controls={anchorEl ? 'schemes-menu' : undefined}
                                             aria-haspopup="true"
-                                            onClick={handleMenuClick}
+                                            // onClick={handleMenuClick}
                                         >
                                             Schemes
                                         </Button>
@@ -105,7 +105,7 @@ const Sell = () => {
                                             id="storage-button"
                                             aria-controls={anchorEl ? 'storage-menu' : undefined}
                                             aria-haspopup="true"
-                                            onClick={handleMenuClick}
+                                            // onClick={handleMenuClick}
                                         >
                                             Storage
                                         </Button>

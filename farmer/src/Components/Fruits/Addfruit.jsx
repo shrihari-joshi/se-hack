@@ -112,6 +112,7 @@ function ProductForm() {
                         <textarea id="description" className='fruit-input' placeholder='Description' />
                         <span class="input-border"></span>
                     </div>
+                </div>
                     <button type="submit" className='sj-button-custom'>Add Product</button>
                 </form>
             </div>
