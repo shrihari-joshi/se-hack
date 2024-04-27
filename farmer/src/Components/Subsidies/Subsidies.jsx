@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Subsidies.css'
 
 const Subsidies = () => {
   const [formData, setFormData] = useState({

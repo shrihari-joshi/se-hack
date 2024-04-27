@@ -4,13 +4,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Bin from './Components/Bin/Bin';
 import FarmerDashBoard from './Components/FarmerDashBoard/FarmerDashBoard';
 import Login from './Components/SignIn/Login/Login'
-// import Home from './Components/Home';
+import Home from './Components/Home';
 import Fruits from './Components/Fruits/Fruits';
 import Vegetables from './Components/Vegetables/Vegetables';
 import MilkProducts from './Components/MilkProducts/MilkProducts';
 import Poultry from './Components/Poultry/Poultry';
-import Profile from './Components/Profile';
-import Subsidies from './Components/Subsidies';
+import Profile from './Components/Profile/Profile';
+import Subsidies from './Components/Subsidies/Subsidies';
 import Addfruit from './Components/Fruits/Addfruit';
 
 
@@ -21,7 +21,7 @@ function App() {
 
       <Router>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/" element={<Login />} />
           <Route path="/farmerdashboard" element={<FarmerDashBoard />} />
           <Route path="/bin" element={<Bin />} />

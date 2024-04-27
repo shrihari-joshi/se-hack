@@ -1,0 +1,58 @@
+/* ProfileCard.css */
+
+.profile-card {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 30rem; /* Adjust width as needed */
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-picture {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-location {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-stats {
+    display: flex;
+  }
+  
+  .stat {
+    margin-right: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  

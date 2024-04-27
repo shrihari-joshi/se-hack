@@ -1,0 +1,44 @@
+/* styles.css */
+
+.form-container {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  
+  .form-label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .checkbox-label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .checkbox-input {
+    margin-right: 0.5rem;
+  }
+  
+  .submit-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional: Add more styles as needed */
+  
