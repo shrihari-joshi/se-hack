@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const MilkProductItems = ({ milkProduct }) => { 
+const MilkProductItems = ({ milkProduct, addToCart }) => { 
     const [selectedQuantity, setSelectedQuantity] = useState(1);
 
     const handleQuantityChange = (e) => {
@@ -25,6 +25,10 @@ const MilkProductItems = ({ milkProduct }) => {
                 className="fruit-quantity"
             />
            
+           <div className="btn-container">
+                <button onClick={() => addToCart(milkProduct, selectedQuantity)} className="milkProducts-btn">Add To Cart</button>
+            </div>
+
         </div>
     );
 };
