@@ -32,11 +32,11 @@ exports.registerUser = async (req, res) => {
 
 exports.registerFarmer = async (req, res) => {
     try {
-        const { name, phoneNumber, password, username, aadharNumber, address } = req.body;
+        const { name, phoneNumber, password, farmername, aadharNumber, address } = req.body;
 
-        const existingFarmer = await Farmer.findOne({ $or: [{ username }, { aadharNumber }, {phoneNumber}] });
+        const existingFarmer = await Farmer.findOne({ $or: [{ farmername }, { aadharNumber }, {phoneNumber}] });
         if (existingFarmer) {
-            return res.status(400).json({ message: 'Username or Aadhar number already exists' });
+            return res.status(400).json({ message: 'farmername or Aadhar number already exists' });
         }
 
         let newAddress;
@@ -48,7 +48,7 @@ exports.registerFarmer = async (req, res) => {
             name,
             phoneNumber,
             password,
-            username,
+            farmername,
             aadharNumber,
             address: newAddress ? newAddress._id : null 
         });

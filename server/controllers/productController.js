@@ -3,10 +3,10 @@ const Product = require('../models/Product');
 const User = require('../models/User'); 
 
 exports.addProduct = async (req, res) => {
-    const { username, date, price, offers, discountPrice, quantity, couponOffer, category, bundles, deals, imageUrl, productName, description, isRecommended, certifications } = req.body;
+    const { farmername, date, price, offers, discountPrice, quantity, couponOffer, category, bundles, deals, imageUrl, productName, description, isRecommended, certifications } = req.body;
 
     try {
-        const farmer = await Farmer.findOne({ username });
+        const farmer = await Farmer.findOne({ farmername });
 
         if (!farmer) {
             return res.status(404).json({ error: 'Farmer not found' });

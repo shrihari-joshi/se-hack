@@ -2,18 +2,18 @@ const User = require('../models/User')
 const Farmer = require('../models/Farmer')
 
 exports.loginFarmer = async (req, res) => {
-    const { phoneNumber, username , password } = req.query;
+    const { phoneNumber, farmername , password } = req.query;
 
     try {
-        if (!phoneNumber && !username) {
-            return res.status(400).json({ error: 'Enter phone number or username' });
+        if (!phoneNumber && !farmername) {
+            return res.status(400).json({ error: 'Enter phone number or farmername' });
         }
 
         let farmer;
         if (phoneNumber) {
             farmer = await Farmer.findOne({ phoneNumber });
         } else {
-            farmer = await Farmer.findOne({ username });
+            farmer = await Farmer.findOne({ farmername });
         }
 
         if (!farmer) {

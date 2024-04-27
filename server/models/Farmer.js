@@ -14,7 +14,7 @@ const farmerSchema = new Schema({
         type : String,
         required: true
     },
-    username: {
+    farmername: {
         type: String,
         required: true,
         unique: true
