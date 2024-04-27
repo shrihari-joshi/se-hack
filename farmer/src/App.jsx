@@ -12,7 +12,7 @@ import Poultry from './Components/Poultry/Poultry';
 import Profile from './Components/Profile';
 import Subsidies from './Components/Subsidies';
 import Addfruit from './Components/Fruits/Addfruit';
-
+import Signup from './Components/SignIn/Signup/SignUp';
 
 function App() {
   return (
@@ -32,6 +32,7 @@ function App() {
           <Route path="/vegetables" element={<Vegetables />} />
           <Route path="/fruits" element={<Fruits />} />
           <Route path="/addfruit" element={<Addfruit />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </Router>
     </div>

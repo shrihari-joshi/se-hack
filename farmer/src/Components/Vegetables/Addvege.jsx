@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Addfruit.css'; // Import CSS file for styling
 
-function ProductForm() {
+function Addvege() {
     // State variables for form fields
     const [productName, setProductName] = useState('');
     const [dateOfHarvest, setDateOfHarvest] = useState('');
@@ -68,4 +68,4 @@ function ProductForm() {
     );
 }
 
-export default ProductForm;
+export default Addvege;

@@ -27,7 +27,7 @@ const LoginPage = () => {
                 <h2>Login</h2>
                 <div className="login-options">
                     <button onClick={() => setLoginType('farmer')}> Farmer</button>
-                    <button onClick={() => setLoginType('consumer')}> Consumer</button>
+                    <button onClick={() => setLoginType('user')}> Consumer</button>
                 </div>
                 {loginType && (
                     <form className="login-form" onSubmit={handleLogin}>
