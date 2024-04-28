@@ -16,6 +16,9 @@ import Register from './Components/SignIn/SignUp';
 import LoginPage from './Components/SignIn/Login/Login';
 import Sell from './Components/sellPage/sell';
 import Storage from './Components/Storage/Storage';
+import Addvege from './Components/Vegetables/Addvege';
+import AddPoultry from './Components/Poultry/Addpoultry';
+import Addmilk from './Components/MilkProducts/Addmilk';
 
 function App() {
   return (
@@ -37,7 +40,9 @@ function App() {
           <Route path="/vegetables" element={<Vegetables />} />
           <Route path="/fruits" element={<Fruits />} />
           <Route path="/addfruit" element={<Addfruit />} />
-          <Route path="/subsidies" element={<Subsidies />} />
+          <Route path="/addvegetable" element={<Addvege />} />
+          <Route path="/addpoultry" element={<AddPoultry />} />
+          <Route path="/adddairy" element={<Addmilk />} />
           <Route path="/storage" element={<Storage />} />
         </Routes>
       </Router>

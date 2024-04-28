@@ -13,9 +13,9 @@ const ProfilePage = () => {
     const fetchUserData = async () => {
       setLoading(true)
       try {
-        const response = await axios.get('http://localhost:3500/farmer/login', {
+        const response = await axios.get('http://localhost:3500/farmer', {
           params: {
-            farmername: userData.farmername
+            farmername: user.farmername
           }
         });
         // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint
