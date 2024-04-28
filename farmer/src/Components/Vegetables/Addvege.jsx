@@ -79,36 +79,36 @@ function Addvege() {
   return (
     <div className="product-form-container">
       <h2>Add Vegetable Product</h2>
-      <form onSubmit={handleSubmit}>
-      <div className="form-group">
-                    <label htmlFor="productName">Product Name:</label>
-                    <input type="text" id="productName" value={productName} onChange={(e) => setProductName(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="dateOfHarvest">Date of Harvest:</label>
-                    <input type="date" id="dateOfHarvest" value={dateOfHarvest.toISOString().substr(0, 10)} onChange={(e) => setDateOfHarvest(new Date(e.target.value))} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="expiryDate">Expiry Date:</label>
-                    <input type="date" id="expiryDate" value={expiryDate.toISOString().substr(0, 10)} onChange={(e) => setExpiryDate(new Date(e.target.value))} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="quantity">Quantity:</label>
-                    <input type="number" id="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="price">Price:</label>
-                    <input type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="offer">Offer:</label>
-                    <input type="number" id="offer" value={offer} onChange={(e) => setOffer(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="description">Description:</label>
-                    <textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
-                </div>
-        <button type="submit">Add Product</button>
+      <form className='Fruit-container' onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input type="text" id="productName" className='fruit-input' placeholder='Product Name' value={productName} onChange={(e) => setProductName(e.target.value)} />
+          <span class="input-border"></span>
+        </div>
+        <div className="form-group">
+          <input type="date" id="dateOfHarvest" className='fruit-input' placeholder='Product Name' value={dateOfHarvest.toISOString().substr(0, 10)} onChange={(e) => setDateOfHarvest(new Date(e.target.value))} />
+          <span class="input-border"></span>
+        </div>
+        <div className="form-group">
+          <input type="date" id="expiryDate" className='fruit-input' placeholder='Product Name' value={expiryDate.toISOString().substr(0, 10)} onChange={(e) => setExpiryDate(new Date(e.target.value))} />
+          <span class="input-border"></span>
+        </div>
+        <div className="form-group">
+          <input type="number" id="quantity" className='fruit-input' placeholder='Product Name' value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+          <span class="input-border"></span>
+        </div>
+        <div className="form-group">
+          <input type="number" id="price" className='fruit-input' placeholder='Product Name' value={price} onChange={(e) => setPrice(e.target.value)} />
+          <span class="input-border"></span>
+        </div>
+        <div className="form-group">
+          <input type="number" id="offer" className='fruit-input' placeholder='Product Name' value={offer} onChange={(e) => setOffer(e.target.value)} />
+          <span class="input-border"></span>
+        </div>
+        <div className="form-group">
+          <textarea id="description" className='fruit-input' placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
+          <span class="input-border"></span>
+        </div>
+        <button className='sj-buttom-custom' type="submit">Add Product</button>
       </form>
       <div className='sj-product-right'>
         <ul className='sj-products'>

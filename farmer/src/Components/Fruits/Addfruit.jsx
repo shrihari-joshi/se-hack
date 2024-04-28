@@ -22,7 +22,7 @@ function ProductForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         // Handle form submission logic here
-        try{
+        try {
             const response = await axios.post('http://localhost:3500/addproduct', {
                 farmername: user.username || user.farmername,
                 productName: productName,
@@ -37,7 +37,7 @@ function ProductForm() {
             })
             console.log(response.data);
         }
-        catch(error){
+        catch (error) {
             console.log(error.message)
         }
     };
@@ -70,34 +70,47 @@ function ProductForm() {
 
 
     return (
-        <div className='fruits'>
+        <div className='fruits flex'>
 
             <div className="sj-product-form-container-custom">
                 <div className='fruits-Div'>
-                <h2>Add Fruits</h2>
-                <form className='Fruit-container' onSubmit={handleSubmit}>
-                    <div className="w-3/4 sj-form-group-custom ">
-                        <input type="text" id="productName" className='fruit-input' placeholder='Product Name' value={productName} onChange={(e) => setProductName(e.target.value)} />
-                        <span class="input-border"></span>
-                    </div>
+                    <h2>Add Fruits</h2>
+                    <form className='Fruit-container' onSubmit={handleSubmit}>
+                        <div className="w-3/4 sj-form-group-custom ">
+                            <input type="text" id="productName" className='fruit-input' placeholder='Product Name' value={productName} onChange={(e) => setProductName(e.target.value)} />
+                            <span class="input-border"></span>
+                        </div>
 
-                    <div className="sj-form-group-custom">
-                        <input type="number " id="quantity" className='fruit-input' placeholder='Quantity' value={quantity} onChange={(e) => setQuantity(e.target.value)} />
-                        <span class="input-border"></span>
-                    </div>
+                        <div className="sj-form-group-custom">
+                            <input type="number " id="quantity" className='fruit-input' placeholder='Quantity' value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+                            <span class="input-border"></span>
+                        </div>
 
-                <div className='sj-product-form'>
-                    <div className="sj-form-group-custom fruit-date1">
-                        <input type="date" id="dateOfHarvest" className='fruit-input' placeholder='Harvest-Date' value={dateOfHarvest.toISOString().substr(0, 10)} onChange={(e) => setDateOfHarvest(new Date(e.target.value))} />
-                        <span class="input-border"></span>
-                    </div>
+                        <div className='sj-product-form'>
+                            <div className="sj-form-group-custom fruit-date1">
+                                <input type="date" id="dateOfHarvest" className='fruit-input' placeholder='Harvest-Date' value={dateOfHarvest.toISOString().substr(0, 10)} onChange={(e) => setDateOfHarvest(new Date(e.target.value))} />
+                                <span class="input-border"></span>
+                            </div>
 
-                    <div className="sj-form-group-custom fruit-date2">
-                    <input type="date" id="expiryDate" className='fruit-input' placeholder='Expiry-date'  value={expiryDate.toISOString().substr(0, 10)} // Convert Date to ISO date format
-                        onChange={(e) => setExpiryDate(new Date(e.target.value))} />
-                        <span class="input-border"></span>
-                    </div>
+                            <div className="sj-form-group-custom fruit-date2">
+                                <input type="date" id="expiryDate" className='fruit-input' placeholder='Expiry-date' value={expiryDate.toISOString().substr(0, 10)} // Convert Date to ISO date format
+                                    onChange={(e) => setExpiryDate(new Date(e.target.value))} />
+                                <span class="input-border"></span>
+                            </div>
+                        </div>
+
+                        <div className="sj-form-group-custom">
+                            <input type="number" id="price" className='fruit-input' placeholder='Price' value={price} onChange={(e) => setPrice(e.target.value)} />
+                            <span class="input-border"></span>
+                        </div>
+                        <div className="sj-form-group-custom">
+                            <textarea id="description" className='fruit-input' placeholder='Description' />
+                            <span class="input-border"></span>
+                        </div>
+                        <button type="submit" className='sj-button-custom'>Add Product</button>
+                    </form>
                 </div>
+<<<<<<< Updated upstream
                 
                     <div className="sj-form-group-custom">
                     <input type="number" id="price" className='fruit-input' placeholder='Price'  value={price} onChange={(e) => setPrice(e.target.value)} />
@@ -110,6 +123,8 @@ function ProductForm() {
                     <button type="submit" className='sj-button-custom'>Add Product</button>
                 </form>
             </div>
+=======
+>>>>>>> Stashed changes
             </div>
 
             <div className='sj-product-right'>
@@ -126,7 +141,7 @@ function ProductForm() {
                     ))}
                 </ul>
             </div>
-            <div className="sj-product-form-container-custom1"></div>
+            {/* <div className="sj-product-form-container-custom1"></div> */}
         </div>
     );
 }

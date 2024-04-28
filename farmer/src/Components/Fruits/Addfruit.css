@@ -45,7 +45,7 @@
   width:100%;
 }
 .fruit-input{
-  color: #fff;
+  color: #000000;
  font-size: 0.9rem;
  background-color: transparent;
  color: black;
@@ -128,7 +128,7 @@
 }
 
 .sj-button-custom:hover {
-  color: #ffffff;
+  color: #000000;
   border: 1px solid #39bda7;
 }
 

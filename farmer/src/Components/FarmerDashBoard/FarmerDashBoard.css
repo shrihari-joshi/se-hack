@@ -66,14 +66,14 @@ body {
 }
 
 .f2 {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5%;
-  font-family: "Roboto", sans-serif;
-  font-size: xx-large;
-  letter-spacing: 2px;
-  line-height: 8vh;
-  font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    font-family: "Roboto", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    line-height: 8vh;
+    font-weight: 400;
 }
 
 .farmer-right {
