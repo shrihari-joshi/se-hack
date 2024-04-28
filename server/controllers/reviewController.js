@@ -41,4 +41,3 @@ exports.getReviewsByProduct = async (req, res) => {
         res.status(500).json({ message : 'Intenal server error'})
     }
 }
-

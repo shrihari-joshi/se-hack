@@ -34,14 +34,14 @@ const LoginPage = () => {
             <div className="login-page-container">
                 <h2>Login</h2>
                 <div className="login-options">
-                    <button onClick={() => setLoginType('farmer')}> Farmer</button>
+                    <button className='but1' onClick={() => setLoginType('farmer')}> Farmer</button>
                     <button onClick={() => setLoginType('user')}> User</button>
 
                 </div>
                 {loginType && (
                     <form className="login-form" onSubmit={handleLogin}>
                         <div className="form-group">
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">Username: </label>
                             <input
                                 type="text"
                                 id="username"
@@ -50,7 +50,7 @@ const LoginPage = () => {
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">Password: </label>
                             <input
                                 type="password"
                                 id="password"
@@ -58,7 +58,7 @@ const LoginPage = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <button type="submit">Login</button>
+                        <button type="submit" className='but2'>Login</button>
                     </form>
                 )}
             </div>

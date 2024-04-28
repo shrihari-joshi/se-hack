@@ -15,6 +15,7 @@ import Addfruit from './Components/Fruits/Addfruit';
 import Register from './Components/SignIn/SignUp';
 import LoginPage from './Components/SignIn/Login/Login';
 import Sell from './Components/sellPage/sell';
+import Storage from './Components/Storage/Storage';
 
 function App() {
   return (
@@ -23,10 +24,10 @@ function App() {
 
       <Router>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/sell" element={<Home />} />
           <Route path="/" element={<FarmerDashBoard />} />
           <Route path="/signup" element={<Register />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/bin" element={<Bin />} />
           <Route path="/milkproducts" element={<MilkProducts />} />
@@ -36,6 +37,8 @@ function App() {
           <Route path="/vegetables" element={<Vegetables />} />
           <Route path="/fruits" element={<Fruits />} />
           <Route path="/addfruit" element={<Addfruit />} />
+          <Route path="/subsidies" element={<Subsidies />} />
+          <Route path="/storage" element={<Storage />} />
         </Routes>
       </Router>
     </div>

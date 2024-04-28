@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Profile.css'; // Import the CSS file for styling
+import axios from 'axios';
+import './Profile.css'; // Import the CSS file for styling
 
 const ProfilePage = () => {
   const [userData, setUserData] = useState(null);
@@ -57,6 +59,7 @@ const ProfilePage = () => {
       </div>
     </div>
   );
+
 };
 
 export default ProfilePage;
