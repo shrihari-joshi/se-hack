@@ -15,7 +15,7 @@
     align-items: center;
   padding: 20px;
   border-radius: 3rem;
-  background-color: lightgreen;
+  background-color: rgb(116, 169, 116);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -75,7 +75,10 @@
   border-radius: 0.4rem;
   cursor: pointer;
 }
-
+.subsidies-but{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
 .form-container button[type="submit"]:hover {
   background-color: #0d9276;
 }

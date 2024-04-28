@@ -129,7 +129,7 @@ const Sell = () => {
                                             }}
                                         >
                                             <MenuItem onClick={handleClose}>MyListings</MenuItem>
-                                            <MenuItem onClick={handleClose}>Documents</MenuItem>
+                                            {/* <MenuItem onClick={handleClose}>Documents</MenuItem> */}
                                             <MenuItem onClick={handleClose}>LogOut</MenuItem>
                                         </Menu>
                                     </li>

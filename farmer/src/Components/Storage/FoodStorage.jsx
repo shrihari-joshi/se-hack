@@ -1,4 +1,5 @@
 import React from 'react'
+import './FoodStorage.css'
 
 const FoodStorage = ({ foodStorage}) => {
     return (

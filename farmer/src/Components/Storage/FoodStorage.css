@@ -1,0 +1,18 @@
+/* styles.css */
+
+/* Custom Class Names Start with "spj" */
+.spj-food-storage {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 10vw;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+  }
+  
+  .spj-food-storage:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

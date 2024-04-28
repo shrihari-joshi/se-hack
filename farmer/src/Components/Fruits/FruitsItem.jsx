@@ -13,7 +13,7 @@ const FruitsItem = ({ fruit, addToCart }) => {
                 <p className="fruit-offers"><strong>Offers</strong> {fruit.offers}</p>
             )}
             {/* <p className="fruit-image"><strong>""Idhar Image dalna hai SHREYAA""</strong> {fruit.imageUrl}</p> */}
-            <p>Discription : {fruit.discription}</p>
+            <p>Discription : {fruit.description}</p>
             {/* <input
                 type="number"
                 min="1"
