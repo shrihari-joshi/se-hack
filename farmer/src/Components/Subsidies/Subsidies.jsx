@@ -213,7 +213,7 @@ const Subsidies = () => {
                 required
                 />
 
-              <button type="submit">Submit</button>
+              <button type="submit" className='subsidies-but'>Submit</button>
 
             </form>
             <div className='response-sub'>

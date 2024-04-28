@@ -15,7 +15,7 @@ const ProfilePage = () => {
       try {
         const response = await axios.get('http://localhost:3500/farmer', {
           params: {
-            farmername: user.farmername
+            // farmername: user.farmername
           }
         });
         // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint

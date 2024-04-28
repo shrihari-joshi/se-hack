@@ -31,15 +31,8 @@ const FruitsItem = ({ fruit, addToCart }) => {
                 <p className="fruit-offers"><strong>Offers</strong> {fruit.offers}</p>
             )}
             {/* <p className="fruit-image"><strong>""Idhar Image dalna hai SHREYAA""</strong> {fruit.imageUrl}</p> */}
-            <p>Discription : {fruit.discription}</p>
-            <div>
-                {review &&
-                    <p>Review by {username} : {review}</p>
-                }
-                {rating &&
-                    <p>Ratings by {username} : {rating}</p>
-                }
-            </div>
+            <p>Discription : {fruit.description}</p>
+            
         </div>
     );
 };

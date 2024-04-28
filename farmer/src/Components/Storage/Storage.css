@@ -1,0 +1,74 @@
+/* styles.css */
+
+/* Custom Class Names Start with "spj" */
+.storage-body{
+    background-color: #ddd;
+    width: 100vw;
+    height: 750vh;
+}
+.spj-input {
+    width: 15rem;
+    padding: 0.5rem;
+    margin: 3rem;
+    margin-bottom: 2rem;
+    border: none;
+    height: 3.3rem;
+    border-radius: 0.4rem;
+    border: 0.1rem solid black;
+    box-sizing: border-box;
+    
+    transition: border-bottom-color 0.3s;
+  }
+  .storage-head{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: -2rem;
+  }
+  .spj-input::placeholder {
+    font-size: 1.1rem;
+  }
+  
+  .spj-button {
+    background-color: #0d9276;
+    color: black;
+    padding: 0.8rem 1rem;
+    border: 0.1rem solid black;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  }
+  .butinput{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spj-button:hover {
+    background-color: #0d9276;
+    color: #eff6e0;
+    border-color: black;
+    padding: 0.8rem 1rem;
+  }
+  
+  .spj-loading {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .spj-storage-item {
+    background-color: #eff6e0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+  }
+  
+  .spj-storage-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

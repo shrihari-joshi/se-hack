@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Addfruit.css'; // Import CSS file for styling
 import FruitsItem from './FruitsItem';
+import Navbar from '../Navbar/Navbar';
 
 function ProductForm() {
     // State variables for form fields
@@ -68,8 +69,12 @@ function ProductForm() {
 
 
     return (
+        <div>
+            <div>
+                <Navbar/>
+            </div>
         <div className='fruits'>
-
+            
             <div className="sj-product-form-container-custom">
                 <div className='fruits-Div'>
                 <h2>Add Fruits</h2>
@@ -117,7 +122,7 @@ function ProductForm() {
                             <div>
                                 <FruitsItem
                                     fruit={fruit}
-                                // addToCart={addToCart}
+                                    // addToCart={addToCart}
                                 />
                             </div>
                         </li>
@@ -126,6 +131,7 @@ function ProductForm() {
             </div>
             <div className="sj-product-form-container-custom1"></div>
         </div>
+    </div>
     );
 }
 
