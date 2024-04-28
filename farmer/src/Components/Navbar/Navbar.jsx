@@ -26,18 +26,18 @@ const Navbar = () => {
   return (
     <div>
         <header>
-                <div class="inner-header">
-                    <div class="container-header">
-                        <div class="main-header">
-                            <div class="bars" id="open">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <div className="inner-header">
+                    <div className="container-header">
+                        <div className="main-header">
+                            <div className="bars" id="open">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                                 </svg>
                             </div>
-                            <div class="logo">
-                                <a href="/sell">Kisan Sangraha</a>
+                            <div className="logo">
+                                <a href="#">Kisan Sangraha</a>
                             </div>
-                            <nav class="list-items active" id="show">
+                            <nav className="list-items active" id="show">
                                 <ul>
                                     <li>
                                         <Button
