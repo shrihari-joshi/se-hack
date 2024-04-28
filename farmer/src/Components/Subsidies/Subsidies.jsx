@@ -90,117 +90,139 @@ const Subsidies = () => {
 
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
-
-        <input placeholder='Name'
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-
-
-        <input placeholder='Age'
-          type="number"
-          id="age"
-          name="age"
-          value={formData.age}
-          onChange={handleChange}
-          required
-        />
-
-
-        <input placeholder='Mobile Number'
-          type="tel"
-          id="mobileNumber"
-          name="mobileNumber"
-          value={formData.mobileNumber}
-          onChange={handleChange}
-          required
-        />
-        <label>Documents Available:</label>
-        <div className="document-checkboxes">
-          <div>
-            <input
-              type="checkbox"
-              id="aadharCard"
-              name="aadharCard"
-              checked={formData.documents.aadharCard}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="aadharCard">Aadhar Card</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="passportPhoto"
-              name="passportPhoto"
-              checked={formData.documents.passportPhoto}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="passportPhoto">Passport Sized Photo</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="bankPassbook"
-              name="bankPassbook"
-              checked={formData.documents.bankPassbook}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="bankPassbook">Bank Account Passbook</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="utilityBill"
-              name="utilityBill"
-              checked={formData.documents.utilityBill}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="utilityBill">Electricity/Water Bill</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              id="vehicleRC"
-              name="vehicleRC"
-              checked={formData.documents.vehicleRC}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="vehicleRC">RC (for vehicle-related schemes)</label>
-          </div>
+    <div className='subsidies'> 
+        <div>
+          <Navbar/>
         </div>
+        <div className='head-chatbot'>
 
-        <input placeholder='Area of Farm'
-          type="number"
-          id="farmArea"
-          name="farmArea"
-          value={formData.farmArea}
-          onChange={handleChange}
-          required
-        />
+        <div className='schemes-heads'>
+          <p>Check the Government Schemes that you can avail for!!</p>
+        </div>
+        <div className='chatbot'>
+          {/* <p>Ask our AI</p> */}
+        </div>
+        </div>
+            <div className="form-container">
+            
+            <form onSubmit={handleSubmit}>
+
+              <input placeholder='Name'
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                />
 
 
-        <input placeholder='Type of Soil'
-          type="text"
-          id="soilType"
-          name="soilType"
-          value={formData.soilType}
-          onChange={handleChange}
-          required
-        />
+              <input placeholder='Age'
+                type="number"
+                id="age"
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+                required
+                />
 
-        <button type="submit">Submit</button>
-      </form>
+
+              <input placeholder='Mobile Number'
+                type="tel"
+                id="mobileNumber"
+                name="mobileNumber"
+                value={formData.mobileNumber}
+                onChange={handleChange}
+                required
+                />
+              <label>Documents Available:</label>
+              <div className="document-checkboxes">
+                <div>
+                  <input
+                    type="checkbox"
+                    id="aadharCard"
+                    name="aadharCard"
+                    checked={formData.documents.aadharCard}
+                    onChange={handleChange}
+                    required
+                    />
+                  <label htmlFor="aadharCard">Aadhar Card</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="passportPhoto"
+                    name="passportPhoto"
+                    checked={formData.documents.passportPhoto}
+                    onChange={handleChange}
+                    required
+                    />
+                  <label htmlFor="passportPhoto">Passport Sized Photo</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="bankPassbook"
+                    name="bankPassbook"
+                    checked={formData.documents.bankPassbook}
+                    onChange={handleChange}
+                    required
+                    />
+                  <label htmlFor="bankPassbook">Bank Account Passbook</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="utilityBill"
+                    name="utilityBill"
+                    checked={formData.documents.utilityBill}
+                    onChange={handleChange}
+                    required
+                    />
+                  <label htmlFor="utilityBill">Electricity/Water Bill</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="vehicleRC"
+                    name="vehicleRC"
+                    checked={formData.documents.vehicleRC}
+                    onChange={handleChange}
+                    required
+                    />
+                  <label htmlFor="vehicleRC">RC (for vehicle-related schemes)</label>
+                </div>
+              </div>
+
+              <input placeholder='Area of Farm'
+                type="number"
+                id="farmArea"
+                name="farmArea"
+                value={formData.farmArea}
+                onChange={handleChange}
+                required
+                />
+
+
+              <input placeholder='Type of Soil'
+                type="text"
+                id="soilType"
+                name="soilType"
+                value={formData.soilType}
+                onChange={handleChange}
+                required
+                />
+
+              <button type="submit">Submit</button>
+
+            </form>
+            <div className='response-sub'>
+
+                {loading && <p>Loading...</p>} 
+              {response && <div className="response">{formatResponse(response)}</div>}
+              {/* {error && <p className="error">{error}</p>}  */}
+            </div>
+          </div>
     </div>
   );
 };

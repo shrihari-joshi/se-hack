@@ -35,7 +35,7 @@ const Navbar = () => {
                                 </svg>
                             </div>
                             <div class="logo">
-                                <a href="#">Kisan Sangraha</a>
+                                <a href="/sell">Kisan Sangraha</a>
                             </div>
                             <nav class="list-items active" id="show">
                                 <ul>
@@ -48,7 +48,7 @@ const Navbar = () => {
                                             // onClick={handleMenuClick}
                                         >
                                             {/* <Link to={'/home'}>Home</Link> */}
-                                            <Link to={'/'}>Home</Link>
+                                            <Link to={'/sell'}>Home</Link>
                                         </Button>
                                     </li>
                                     <li>

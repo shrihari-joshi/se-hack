@@ -1,14 +1,21 @@
 /* Addfruit.css */
 
 .fruits {
-  background-color: #fefffd;
-  width: 100vw;
-  height: 100vh;
+  background-color: white;
+  
   margin-top: -1rem;
+  display: flex;
+  flex-direction: row;
+  
+  width: 100%;
+  height: 100%;
 }
 .fruits-Div{
   padding: 2vh;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: lightgreen;
 }
 .Fruit-container{
   display: flex;
@@ -20,14 +27,12 @@
   width: 30%;
   height: 100%;
   padding: 2rem;
-  background-image: url(./image.png);
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-image: url(./image.png);   */
+  /* background-image: url(./image.png);    */
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
-  border-right:2px solid green;
+
 
 }
 
@@ -43,6 +48,7 @@
   color: #fff;
  font-size: 0.9rem;
  background-color: transparent;
+ color: black;
  width: 100%;
  box-sizing: border-box;
  padding-inline: 0.5em;
@@ -76,57 +82,7 @@
   gap:10px;
 }
 
-/* .sj-form-group-custom label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  font-size: 1.2em;
-  text-align: left;
-  margin-left: 1rem;
-  
-} */
-/* .descrip{ */
-  /* margin-left: 2rem ;
-}
-.sj-form-group-custom input[type="text"],
-.sj-form-group-custom input[type="date"],
-.sj-form-group-custom input[type="number"],
-.sj-form-group-custom textarea,
-.sj-form-group-custom select {
-  width: 80%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 0.1rem solid #ccc;
-  border-radius: 0.4rem;
-  margin-bottom: 1rem;
-}
-.sj-form-group-custom textarea {
-  height: 1rem;
-}
-.fruit-date1{
-  text-align: left;
-  margin-left: -2rem;
-  text-align: left;
-}
-.fruit-date2{
-  text-align: left;
-  margin-left: -1rem;
-}
-.sj-button-custom {
-  background-color: #6cba70;
-  color: white;
-  padding: 1rem 1rem;
-  border: none;
-  border-radius: 0.4rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-}
 
-.sj-button-custom:hover {
-  background-color: #41b06e;
-} */
 .sj-button-custom {
   display: inline-block;
   padding: 12px 24px;
@@ -186,4 +142,78 @@
   top: -45%;
   background-color: #39bda7;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.sj-product-right {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sj-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.sj-products li {
+  flex: 0 0 calc(33.33% - 1rem);
+  max-width: calc(33.33% - 1rem);
+  margin: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  
+  /* background-color: red; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sj-products li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+/* right side*/
+
+
+}
+
+.sj-product-right {
+  flex: 1;
+  padding: 0;
+  margin-top: 2rem;
+  margin-right: -22rem;
+  right: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: flex-end;
+  justify-content: flex-start; /* Align the content to the top-right corner */
+}
+
+.sj-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  
+  margin: 0;
+}
+
+.sj-products li {
+  flex: 0 0 calc(33.33% - 1rem);
+  max-width: calc(33.33% - 1rem);
+  margin: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  background-color: lightgreen;
+}
+
+.sj-products li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
