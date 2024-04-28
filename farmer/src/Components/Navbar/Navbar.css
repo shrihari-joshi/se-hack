@@ -1,8 +1,8 @@
 
 .inner-header {
-    box-shadow: 0px 4px 1px 0px rgba(0, 0, 0, 0.11);
-    background-color: #dddd;
-  }
+    box-shadow: 0px 4px 1px 0px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
+}
   
   .container-header {
     max-width: 1340px;
@@ -16,11 +16,11 @@
     padding: 0px 22px;
   }
   
-  .logo > a {
+  .logo1 > a {
     text-decoration: none;
     color: black;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .bars > svg {
     cursor: pointer;

@@ -8,8 +8,8 @@ const options = {
         limit: '20',
         country: 'us',
         lang: 'en',
-        lat: '19.07283000',
-        lng: '72.88261000',
+        lat: '18.7358',
+        lng: '73.0947',
         offset: '0',
         zoom: '13'
     },

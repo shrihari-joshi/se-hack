@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Main container */
+.kisan-care {
+    width: 100vw;
+    height: 100vh;
+  /* max-width: 1000px; */
+  margin: auto;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+/* Header */
+.kisan-care header h1{
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 31px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Heading */
+.kisan-care h1 {
+  font-size: 2.3rem;
+  color: #283618;
+}
+
+/* Paragraphs */
+.kisan-care p {
+  color: #283618;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+}
+
+/* Form container */
+.kisan-care-form {
+  text-align: center;
+  color: #283618;
+  font-size: 1rem;
+  max-width: 500vw;
+  max-height: 170px;
+  padding: 2rem;
+  border: 0.1rem solid #283618;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Input field */
+.kisan-care-input {
+  padding: 1rem;
+  width: 100%;
+  background-color: transparent;
+  font-size: 0.9rem;
+  border: none;
+  outline: 0.5px solid #283618;
+  border-radius: 0.3rem;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 10rem;
+}
+
+/* Button */
+.kisan-care-button {
+  padding: 0.8rem 1.8rem; 
+  border: none;
+  border-radius: 0.4rem; 
+  background-color: #eff6e0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  color: #283618;
+  border: 2px solid #283618;
+}
+
+.kisan-care-button:hover {
+  background-color: #283618;
+  color: #eff6e0;
+}
+
+/* Response section */
+.kisan-care-response {
+  text-align: start;
+  margin-top: 1rem;
+  border: 0.1rem solid #283618;
+  border-radius: 0.5rem;
+}
+
+/* Response paragraph */
+.response-paragraph {
+  font-size: 1rem;
+  color: #283618;
+  margin-bottom: 10px;
+}
+
+/* Ordered list in the response */
+.response-ordered-list {
+  margin-bottom: 10px;
+}
+
+/* List items in the response */
+.response-ordered-list li {
+  /* list-style-type: decimal; */
+  margin-left: 17px;
+}
+ol{
+  list-style-type: none;
+}

@@ -29,6 +29,7 @@ app.use('/', require('./routes/gemini'))
 app.use('/', require('./routes/user'))
 app.use('/', require('./routes/map'))
 app.use('/', require('./routes/weather'))
+app.use('/', require('./routes/review'))
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');

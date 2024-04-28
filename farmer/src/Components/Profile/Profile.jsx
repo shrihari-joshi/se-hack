@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Profile.css'; // Import the CSS file for styling
-
 const ProfilePage = () => {
+  const user=JSON.parse(localStorage.getItem('user'))
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');

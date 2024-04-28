@@ -19,7 +19,7 @@ const FarmerDashBoard = () => {
                 </nav>
                 <div className='center-farmer'>
                     <div className='f1'><p>Welcome to our farm</p></div>
-                    <div className='f2'><span className='p1'>The Place Where</span><span className='p2'>Farmer directly connects to consumer</span></div>
+                    <div className='f2'><span className='p1'>Bridging The Gap :</span><span className='p2'> Farmer To Family</span></div>
                     <div className='farmers-buttons flex gap-10'>
                         <button className="button-33" role="button"><Link to={'/login'}>SignIn</Link></button>
                         <button className="button-33" role="button"><Link to={'/signup'}>SignUp</Link></button>
