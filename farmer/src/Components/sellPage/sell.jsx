@@ -1,5 +1,3 @@
-// Sell.js
-
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -29,16 +27,14 @@ const Sell = () => {
         <div className='black-pane'>
             <div className='sell-container'>
                 <header className='header-main'>
-                    <div class="inner-header">
-                        <div class="container-header">
-                            <div class="main-header">
-                                <div class="bars" id="open">
-                                
-                                </div>
-                                <div class="logo1">
+                    <div className="inner-header">
+                        <div className="container-header">
+                            <div className="main-header">
+                                <div className="bars" id="open"></div>
+                                <div className="logo1">
                                     <a href="#">Kisan Sangraha</a>
                                 </div>
-                                <nav class="list-items active" id="show">
+                                <nav className="list-items active" id="show">
                                     <ul>
                                         <li>
                                             <Button
@@ -48,7 +44,6 @@ const Sell = () => {
                                                 onClick={handleMenuClick}
                                             >
                                                 <Link to={'/home'}>Home</Link>
-
                                             </Button>
                                         </li>
                                         <li>
@@ -111,7 +106,7 @@ const Sell = () => {
                                                 aria-haspopup="true"
                                                 onClick={handleProfileMenuClick}
                                             >
-                                                <div className="profile"><CgProfile size={25}/></div>
+                                                <div className="profile"><CgProfile size={25} /></div>
                                             </Button>
                                             <Menu
                                                 id="profile-menu"

@@ -17,7 +17,6 @@ import Register from './Components/SignIn/SignUp';
 import LoginPage from './Components/SignIn/Login/Login';
 import Sell from './Components/sellPage/sell';
 import Storage from './Components/Storage/Storage';
-import Addvege from './Components/Vegetables/Addvege';
 import AddPoultry from './Components/Poultry/Addpoultry';
 import Addmilk from './Components/MilkProducts/Addmilk';
 
