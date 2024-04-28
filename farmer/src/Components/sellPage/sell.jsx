@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { CgProfile } from "react-icons/cg";
-// import 'react-slideshow-image/dist/styles.css'
+import 'react-slideshow-image/dist/styles.css'
 import './sell.css';
 import Image1 from '../images/image8.png'
 import Image2 from '../images/image9.png'
@@ -51,9 +51,9 @@ const Sell = () => {
                                             id="home-button"
                                             aria-controls={anchorEl ? 'home-menu' : undefined}
                                             aria-haspopup="true"
-                                            // onClick={handleMenuClick}
+                                            onClick={handleMenuClick}
                                         >
-                                            <Link to={'/sell'}>Home</Link>
+                                            <Link to={'/home'}>Home</Link>
 
                                         </Button>
                                     </li>
@@ -95,7 +95,7 @@ const Sell = () => {
                                             id="schemes-button"
                                             aria-controls={anchorEl ? 'schemes-menu' : undefined}
                                             aria-haspopup="true"
-                                            // onClick={handleMenuClick}
+                                            onClick={handleMenuClick}
                                         >
                                             Schemes
                                         </Button>
@@ -105,7 +105,7 @@ const Sell = () => {
                                             id="storage-button"
                                             aria-controls={anchorEl ? 'storage-menu' : undefined}
                                             aria-haspopup="true"
-                                            // onClick={handleMenuClick}
+                                            onClick={handleMenuClick}
                                         >
                                             Storage
                                         </Button>
