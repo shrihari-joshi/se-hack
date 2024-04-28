@@ -1,7 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
+import { Rating } from '@mui/material';
 
 const FruitsItem = ({ fruit, addToCart }) => { 
+    const [review, setReview] = useState(null)
+    const [rating, setRating] = useState(null)
+    const [username, setUsername] = useState('')
 
+    const fetchReview = async (productName) => {
+        const response = await axios.get('http://localhost:3500/getreviewbyproduct', {
+            params : {
+                productName : fruit.productName
+            }
+        })
+        setReview(response.data.reviews)
+        setRating(response.data.rating)
+        setUsername(response.data.username)
+    }
+    useEffect(() => {
+        fetchReview()
+    }, [])
     return (
         <div className="fruit-container">
             <h3 className="fruit-name">{fruit.productName}</h3>
@@ -14,18 +32,14 @@ const FruitsItem = ({ fruit, addToCart }) => {
             )}
             {/* <p className="fruit-image"><strong>""Idhar Image dalna hai SHREYAA""</strong> {fruit.imageUrl}</p> */}
             <p>Discription : {fruit.discription}</p>
-            {/* <input
-                type="number"
-                min="1"
-                value={selectedQuantity}
-                onChange={handleQuantityChange}
-                className="fruit-quantity"
-            /> */}
-            {/* <div className="btn-container">
-                <button onClick={() => addToCart(fruit, selectedQuantity)} className="fruit-btn">Add To Cart</button>
+            <div>
+                {review &&
+                    <p>Review by {username} : {review}</p>
+                }
+                {rating &&
+                    <p>Ratings by {username} : {rating}</p>
+                }
             </div>
-            */}
-            
         </div>
     );
 };
