@@ -26,6 +26,9 @@ app.use('/', require('./routes/login'))
 app.use('/', require('./routes/uploads'))
 app.use('/', require('./routes/product'))
 app.use('/', require('./routes/gemini'))
+app.use('/', require('./routes/user'))
+app.use('/', require('./routes/map'))
+app.use('/', require('./routes/weather'))
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');

@@ -1,3 +1,4 @@
+const Address = require('../models/Address');
 const Farmer = require('../models/Farmer'); 
 const Product = require('../models/Product'); 
 const User = require('../models/User'); 
@@ -52,6 +53,18 @@ exports.getProducts = async (req, res) => {
     }
 }
 
-// exports.productSold = async (req, res) => {
+exports.getProductsByFarmer = async (req, res) => {
+    const { farmername } = req.query
+    try {
+        const farmer = await Farmer.findOne({ farmername })
+        const address = await Address.findOne({ _id: farmer.address._id });
 
-// }
+        const farmerDetails = {
+            farmer,address
+        }
+        res.status(200).json({ farmerDetails })
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).json( { message : 'Internal server error'})
+    }
+}

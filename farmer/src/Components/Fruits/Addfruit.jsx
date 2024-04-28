@@ -104,7 +104,7 @@ function ProductForm() {
                         <span class="input-border"></span>
                     </div>
                     <div className="sj-form-group-custom">
-                        <textarea id="description" className='fruit-input' placeholder='Description' />
+                        <textarea id="description" className='fruit-input' placeholder='Description' onChange={(e) => setDescription(e.target.value)} />
                         <span class="input-border"></span>
                     </div>
                     <button type="submit" className='sj-button-custom'>Add Product</button>
