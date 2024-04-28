@@ -20,6 +20,9 @@
   width: 30%;
   height: 100%;
   padding: 2rem;
+  background-image: url(./image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   /* background-image: url(./image.png);   */
   background-repeat: no-repeat;
   background-size: cover;

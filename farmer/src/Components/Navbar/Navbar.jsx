@@ -48,7 +48,7 @@ const Navbar = () => {
                                             // onClick={handleMenuClick}
                                         >
                                             {/* <Link to={'/home'}>Home</Link> */}
-                                            Home
+                                            <Link to={'/'}>Home</Link>
                                         </Button>
                                     </li>
                                     <li>
@@ -58,7 +58,7 @@ const Navbar = () => {
                                             aria-haspopup="true"
                                             onClick={handleMenuClick}
                                         >
-                                            Products
+                                            <Link>Products</Link>
                                         </Button>
                                         <Menu
                                             id="products-menu"
@@ -111,7 +111,7 @@ const Navbar = () => {
                                             aria-haspopup="true"
                                             onClick={handleProfileMenuClick}
                                         >
-                                            <div className="profile"></div>
+                                            <div className="profile"><CgProfile size={25}/></div>
                                         </Button>
                                         <Menu
                                             id="profile-menu"

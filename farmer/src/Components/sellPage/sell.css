@@ -123,6 +123,7 @@
   #wrapper p {
     text-align: center;
     color: #fff;
+    
     font-size: 2em;
     font-family: "Arial Black", sans-serif;
     text-shadow: 2px 2px #555;
@@ -208,4 +209,3 @@
       margin: 0 auto;
     }
   }
-  

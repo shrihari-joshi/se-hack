@@ -1,18 +1,19 @@
 /* Profile.css */
+/* Profile.css */
 
 .profile-page-container {
-    width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #e3e3e3;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-info {
-    margin-top: 20px;
-  }
-  
-  .profile-info p {
-    margin-bottom: 10px;
-  }
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #e3e3e3;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  margin-top: 20px;
+}
+
+.profile-info p {
+  margin-bottom: 10px;
+}

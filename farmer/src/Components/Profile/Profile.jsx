@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Profile.css'; // Import the CSS file for styling
+import axios from 'axios';
+import './Profile.css'; // Import the CSS file for styling
 
-const Profile = () => {
+const ProfilePage = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-    const user = JSON.parse(localStorage.getItem('user'))
 
+  useEffect(() => {
+    // Define a function to fetch user data from MongoDB
     const fetchUserData = async () => {
       setLoading(true)
       try {
@@ -18,17 +21,14 @@ const Profile = () => {
         });
         // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint
         console.log('user connected');
-        setUserData(response.data);
         console.log(userData);
+        setUserData(response.data);
         setLoading(false);
       } catch (error) {
         setError('Error fetching user data');
         setLoading(false);
       }
     };
-
-  useEffect(() => {
-    // Define a function to fetch user data from MongoDB
 
     fetchUserData(); // Call the function to fetch user data
   }, []);
@@ -44,26 +44,22 @@ const Profile = () => {
   return (
     <div className="profile-page-container">
       <h2>Profile</h2>
-      {userData ? (
-        <div className="profile-info">
-          <p><strong>Name:</strong> {userData.name}</p>
-          <p><strong>Username:</strong> {userData.farmername}</p>
-          <p><strong>Phone Number:</strong> {userData.phoneNumber}</p>
-          {userData.address && (
-            <div>
-              <p><strong>Address:</strong></p>
-              <p>{userData.address.street}</p>
-              <p>{userData.address.city}, {userData.address.pincode}</p>
-              <p>{userData.address.state}</p>
-            </div>
-          )}
-        </div>
-      ) : (
-        <div>Loading...</div>
-      )}
+      <div className="profile-info">
+        <p><strong>Name:</strong> {userData.name}</p>
+        <p><strong>Username:</strong> {userData.farmername}</p>
+        <p><strong>Phone Number:</strong> {userData.phoneNumber}</p>
+        {userData.street && (
+          <div>
+            <p><strong>Address:</strong></p>
+            <p>{userData.street}</p>
+            <p>{userData.city}, {userData.pincode}</p>
+            <p>{userData.state}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
-  
+
 };
 
-export default Profile;
+export default ProfilePage;
