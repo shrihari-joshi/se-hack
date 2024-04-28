@@ -48,16 +48,6 @@ const Sell = () => {
                                         </li>
                                         <li>
                                             <Button
-                                                id="kisancare-button"
-                                                aria-controls={anchorEl ? 'home-menu' : undefined}
-                                                aria-haspopup="true"
-                                                onClick={handleMenuClick}
-                                            >
-                                                <Link to={'/kisancare'}>Kisan Care</Link>
-                                            </Button>
-                                        </li>
-                                        <li>
-                                            <Button
                                                 id="products-button"
                                                 aria-controls={anchorEl ? 'products-menu' : undefined}
                                                 aria-haspopup="true"
