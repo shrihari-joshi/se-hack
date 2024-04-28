@@ -2,6 +2,37 @@ import React, { useState } from 'react';
 import './Subsidies.css'
 import Sell from '../sellPage/sell';
 import Navbar from '../Navbar/Navbar';
+import axios from 'axios'
+
+const formatResponse = (response) => {
+  const paragraphs = response.split("\n\n");
+  
+  return paragraphs.map((paragraph, index) => {
+      const lines = paragraph.split("**");
+      return (
+          <div key={index}>
+          {lines.map((line, idx) => {
+              if (idx % 2 === 0) {
+              return (
+                  <p key={idx} className="weather-normal"> 
+                      {line}
+                  </p>
+              );
+              } else {
+              const numberedLines = line.split(/\*\*(\d+)\. /).filter(Boolean);
+              return (
+                  <ol key={idx} className="weather-numbered"> 
+                      {numberedLines.map((numberedLine, index) => (
+                          <li key={index}>{numberedLine}</li>
+                      ))}
+                  </ol>
+              );
+              }
+          })}
+          </div>
+      );
+  });
+};
 
 const Subsidies = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +49,8 @@ const Subsidies = () => {
     farmArea: '',
     soilType: '',
   });
-
+  const [response, setResponse] = useState()
+  const [loading, setLoading] = useState()
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === 'checkbox') {
@@ -37,12 +69,25 @@ const Subsidies = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you can add validation logic to ensure all fields are filled
-    // and handle form submission as needed
-    console.log(formData);
+    try {
+      setLoading(true);
+      const response = await axios.post('http://localhost:3500/farmerresponse', {
+        soilType: formData.soilType,
+        age: formData.age,
+        area: formData.farmArea
+      });
+      setResponse(response.data);
+      console.log(response.data);
+    } catch (err) {
+      console.log(err.message);
+      // Handle error state or display error message to the user
+    } finally {
+      setLoading(false);
+    }
   };
+  
 
   return (
     <div>
@@ -159,6 +204,9 @@ const Subsidies = () => {
         />
 
       <button type="submit">Submit</button>
+      {loading && <p>Loading...</p>} 
+      {response && <div className="response">{formatResponse(response)}</div>}
+      {/* {error && <p className="error">{error}</p>}  */}
     </form>
     </div>
   );
