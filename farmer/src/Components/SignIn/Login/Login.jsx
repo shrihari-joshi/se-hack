@@ -13,13 +13,13 @@ const LoginPage = () => {
     const handleLogin = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.get(`http://localhost:3500/${loginType}/login` , {
-                params : {
+            const response = await axios.get(`http://localhost:3500/${loginType}/login`, {
+                params: {
                     username: username,
-                    farmername: username, 
-                    password : password
+                    farmername: username,
+                    password: password
                 }
-            })
+            });
             localStorage.setItem('user', JSON.stringify(response.data));
             console.log(response.data);
             history('/sell')

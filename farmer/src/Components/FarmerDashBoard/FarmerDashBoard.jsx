@@ -9,14 +9,7 @@ const FarmerDashBoard = () => {
                     <div className='logo'></div>
                     <div className='title'>Kisan Sangraha</div>
                 </div>
-                <nav className="navbar">
-                    <div className="container pt-">
-                        <ul className="nav-links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
+
                 <div className='center-farmer'>
                     <div className='f1'><p>Welcome to our farm</p></div>
                     <div className='f2'><span className='p1'>The Place Where</span><span className='p2'>Farmer directly connects to consumer</span></div>

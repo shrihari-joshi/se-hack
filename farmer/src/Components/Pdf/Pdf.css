@@ -1,0 +1,34 @@
+.upload-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.upload-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.upload-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.show-image-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.show-image-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.show-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}

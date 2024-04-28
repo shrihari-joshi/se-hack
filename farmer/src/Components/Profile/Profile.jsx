@@ -1,45 +1,62 @@
 import React, { useState, useEffect } from 'react';
-import './Profile.css';
+import axios from 'axios';
+import './Profile.css'; // Import the CSS file for styling
 
-const ProfileCard = () => {
-  const [profileData, setProfileData] = useState(null);
+const ProfilePage = () => {
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    // Fetch profile data from the backend API
-    fetch('https://your-backend-api.com/profile')
-      .then(response => response.json())
-      .then(data => setProfileData(data))
-      .catch(error => console.error('Error fetching profile data:', error));
-  }, []); // Empty dependency array to ensure the effect runs only once on mount
+    // Define a function to fetch user data from MongoDB
+    const fetchUserData = async () => {
+      setLoading(true)
+      try {
+        const response = await axios.get('http://localhost:3500/farmer/login', {
+          params: {
+            farmername: userData.farmername
+          }
+        });
+        // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint
+        console.log('user connected');
+        console.log(userData);
+        setUserData(response.data);
+        setLoading(false);
+      } catch (error) {
+        setError('Error fetching user data');
+        setLoading(false);
+      }
+    };
 
-  if (!profileData) {
-    return <p>Loading...</p>;
+    fetchUserData(); // Call the function to fetch user data
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
   }
 
   return (
-    <div className="profile-card">
-      <img src={profileData.profilePicture} alt="Profile Picture" className="profile-picture" />
+    <div className="profile-page-container">
+      <h2>Profile</h2>
       <div className="profile-info">
-        <h2 className="profile-name">{profileData.name}</h2>
-        <p className="profile-title">{profileData.title}</p>
-        <p className="profile-location">{profileData.location}</p>
-        <div className="profile-stats">
-          <div className="stat">
-            <p className="stat-label">Connections</p>
-            <p className="stat-value">{profileData.connections}</p>
+        <p><strong>Name:</strong> {userData.name}</p>
+        <p><strong>Username:</strong> {userData.farmername}</p>
+        <p><strong>Phone Number:</strong> {userData.phoneNumber}</p>
+        {userData.street && (
+          <div>
+            <p><strong>Address:</strong></p>
+            <p>{userData.street}</p>
+            <p>{userData.city}, {userData.pincode}</p>
+            <p>{userData.state}</p>
           </div>
-          <div className="stat">
-            <p className="stat-label">Posts</p>
-            <p className="stat-value">{profileData.posts}</p>
-          </div>
-          <div className="stat">
-            <p className="stat-label">Followers</p>
-            <p className="stat-value">{profileData.followers}</p>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default ProfileCard;
+export default ProfilePage;
